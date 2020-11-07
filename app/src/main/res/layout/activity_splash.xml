@@ -17,8 +17,10 @@
         android:fontFamily="@font/helvetica_neue_bold"
         android:maxLines="2"
         android:textSize="20sp"
+        android:background="@drawable/button_primary_bg"
         android:text="@string/app_name"
         android:textAlignment="center"
+        android:padding="10dp"
         android:textColor="@color/white" />
 
     <ProgressBar

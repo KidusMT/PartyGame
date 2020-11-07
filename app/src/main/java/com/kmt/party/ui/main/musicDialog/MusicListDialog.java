@@ -95,7 +95,7 @@ public class MusicListDialog extends BaseDialog implements MusicListMvpView, Mus
         playMusic.setChecked(isPlaying);
         playMusic.setOnCheckedChangeListener((compoundButton, b) -> {
             isPlaying = b;
-            communicator.setMusicOnOff(isPlaying);
+//            communicator.setMusicOnOff(isPlaying);
         });
     }
 
@@ -119,8 +119,8 @@ public class MusicListDialog extends BaseDialog implements MusicListMvpView, Mus
 
     @Override
     public void onItemClicked(MusicData application) {
-        if (isPlaying) communicator.setSelectedMusic(application.fileName);
-        else communicator.setSelectedMusic("");
+//        if (isPlaying) communicator.setSelectedMusic(application.fileName);
+//        else communicator.setSelectedMusic("");
         dismissDialog();
     }
 }

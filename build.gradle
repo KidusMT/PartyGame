@@ -44,6 +44,7 @@ ext {
     butterKnifeVersion = '10.2.0'
     debugDBVersion = '1.0.3'
     timberVersion = '4.5.1'
+    placeholderviewVersion = '0.6.1'
 
     retrofitVersion = '2.6.2'
     retrofitInterceptorVersion = '3.8.0'

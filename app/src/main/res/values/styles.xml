@@ -18,7 +18,7 @@
     <style name="GalaxyZooThemeToolbarDarkOverflow" parent="Theme.AppCompat.DayNight.NoActionBar">
         <!-- android:textColorPrimary is the  color of the title text
              in the Toolbar, in the Theme.AppCompat theme:  -->
-        <item name="android:textColorPrimary">@color/white</item>
+        <item name="android:textColorPrimary">@color/black_effective</item>
 
         <!-- android:textColorPrimaryInverse is the  color of the title
              text in the Toolbar, in the Theme.AppCompat.Light theme:  -->
@@ -105,12 +105,12 @@
     </style>
 
     <style name="Button.Primary" parent="Button" tools:keep="@style/Button_Primary">
-        <item name="android:textColor">@color/white</item>
+        <item name="android:textColor">@color/black_effective</item>
         <item name="android:background">@drawable/button_primary_bg</item>
     </style>
 
     <style name="Button.Secondary" parent="Button" tools:keep="@style/Button_Secondary">
-        <item name="android:textColor">@color/white</item>
+        <item name="android:textColor">@color/black_effective</item>
         <item name="android:background">@drawable/button_secondary_bg</item>
     </style>
 
@@ -132,24 +132,8 @@
         <item name="android:background">@color/transparent</item>
     </style>
 
-    <style name="AppTab" parent="Widget.Design.TabLayout" tools:keep="@style/AppTab">
-        <item name="android:theme">@style/ThemeOverlay.AppCompat.ActionBar</item>
-        <item name="android:minHeight">?attr/actionBarSize</item>
-        <item name="tabTextAppearance">@style/AppTab.TextAppearance</item>
-        <item name="tabIndicatorHeight">2dp</item>
-        <item name="tabSelectedTextColor">@color/white</item>
-        <item name="tabTextColor">@color/white</item>
-    </style>
-
-    <style name="AppTab.TextAppearance" parent="TextAppearance.Design.Tab" tools:keep="@style/AppTab_TextAppearance">
-        <item name="textAllCaps">false</item>
-        <item name="android:textSize">16sp</item>
-        <item name="android:textAllCaps">false</item>
-        <item name="android:textStyle">normal</item>
-    </style>
-
     <style name="Button.Primary.Quiz.Empty" parent="Button.Primary" tools:keep="@style/Button_Primary_Quiz_Empty">
-        <item name="android:textColor">@color/white</item>
+        <item name="android:textColor">@color/black_effective</item>
         <item name="android:textAllCaps">true</item>
         <item name="android:background">@drawable/button_primary_bg</item>
     </style>

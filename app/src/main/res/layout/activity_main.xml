@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:background="@drawable/bg_gradient"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
@@ -32,7 +31,7 @@
                     android:layout_centerVertical="true"
                     android:fontFamily="@font/helvetica_neue"
                     android:paddingStart="@dimen/activity_vertical_margin"
-                    android:textColor="@color/primary_text_color"
+                    android:textColor="@color/white"
                     android:paddingEnd="@dimen/activity_vertical_margin"
                     android:text="@string/app_name"
                     android:textSize="18sp" />
@@ -45,55 +44,26 @@
 
         </com.google.android.material.appbar.AppBarLayout>
 
-        <ScrollView
-            android:layout_marginTop="?actionBarSize"
+    <RelativeLayout
+        android:layout_gravity="center_vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/top_text"
+            android:fontFamily="@font/helvetica_neue_lt"
+            android:textSize="30sp"
+            android:layout_marginTop="30dp"
+            android:textAlignment="center"
+            android:text="Never have I ever..."
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="wrap_content"/>
 
-            <RelativeLayout
-                android:id="@+id/layout_content"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="5dp"
-                android:layout_marginEnd="5dp">
+        <com.mindorks.placeholderview.SwipePlaceHolderView
+            android:id="@+id/cards_container"
+            android:layout_below="@id/top_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
 
-                <LinearLayout
-                    android:id="@+id/top_container"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+    </RelativeLayout>
 
-                    <com.skyfishjy.library.RippleBackground
-                        android:id="@+id/content"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center_horizontal"
-                        android:gravity="center"
-                        app:rb_color="#0099CC"
-                        app:rb_duration="3000"
-                        app:rb_radius="32dp"
-                        app:rb_rippleAmount="4"
-                        app:rb_scale="6">
-
-                        <ImageView
-                            android:id="@+id/start"
-                            android:layout_width="match_parent"
-                            android:layout_height="200dp"
-                            android:layout_margin="50dp"
-                            android:background="?attr/selectableItemBackground"
-                            app:srcCompat="@drawable/ic_start" />
-
-                    </com.skyfishjy.library.RippleBackground>
-
-                </LinearLayout>
-
-                <androidx.recyclerview.widget.RecyclerView
-                    android:layout_below="@id/top_container"
-                    android:id="@+id/rv_application"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_marginTop="3dp"
-                    android:scrollbars="vertical"
-                    tools:listitem="@layout/item_application" />
-            </RelativeLayout>
-        </ScrollView>
-</androidx.coordinatorlayout.widget.CoordinatorLayout>
+</LinearLayout>
