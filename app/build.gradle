@@ -58,6 +58,9 @@ dependencies {
     implementation 'androidx.vectordrawable:vectordrawable-animated:1.1.0'
     implementation 'androidx.multidex:multidex:2.0.1'
 
+    // sweet dialog
+    implementation 'cn.pedant.sweetalert:library:1.3'
+
     // swipe view
     implementation "com.mindorks:placeholderview:$rootProject.placeholderviewVersion"
 
