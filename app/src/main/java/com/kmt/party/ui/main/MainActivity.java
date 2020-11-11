@@ -11,9 +11,6 @@ import android.view.MenuItem;
 import android.view.animation.Animation;
 import android.view.animation.ScaleAnimation;
 
-import androidx.appcompat.widget.Toolbar;
-
-import com.google.android.material.appbar.AppBarLayout;
 import com.kmt.party.R;
 import com.kmt.party.data.model.Question;
 import com.kmt.party.ui.base.BaseActivity;
@@ -33,11 +30,6 @@ public class MainActivity extends BaseActivity implements MainMvpView {
     @Inject
     MainMvpPresenter<MainMvpView> mPresenter;
 
-    @BindView(R.id.toolbar)
-    Toolbar mToolbar;
-
-    @BindView(R.id.appbarLayout)
-    AppBarLayout appBarLayout;
     @BindView(R.id.cards_container)
     SwipePlaceHolderView mCardsContainerView;
 
@@ -72,9 +64,6 @@ public class MainActivity extends BaseActivity implements MainMvpView {
 
     @Override
     protected void setUp() {
-        setSupportActionBar(mToolbar);
-        if (getSupportActionBar() != null)
-            getSupportActionBar().setDisplayShowTitleEnabled(false);
         setupCardContainerView();
         mPresenter.onCardExhausted();
     }
@@ -99,7 +88,7 @@ public class MainActivity extends BaseActivity implements MainMvpView {
                 .setWidthSwipeDistFactor(5)
                 .setSwipeDecor(new SwipeDecor()
                         .setViewWidth((int) (0.90 * screenWidth))
-                        .setViewHeight((int) (0.75 * screenHeight))
+                        .setViewHeight((int) (0.85 * screenHeight))
                         .setPaddingTop(20)
                         .setSwipeRotationAngle(10)
                         .setRelativeScale(0.01f));
@@ -108,7 +97,7 @@ public class MainActivity extends BaseActivity implements MainMvpView {
             if (count == 0) {
                 // reload the contents again after 1 sec delay
                 new Handler(getMainLooper()).postDelayed(() ->
-                        mPresenter.onCardExhausted(), 800);
+                        mPresenter.onCardExhausted(), 400);
             }
         });
     }

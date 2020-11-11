@@ -36,77 +36,26 @@ public class MainPresenter<V extends MainMvpView> extends BasePresenter<V> imple
 
     @Override
     public void onViewInitialized() {
-
-        Random rand = new Random();
-
         List<Question> questions = new ArrayList<>();
-        Question question = new Question();
-        question.setId(rand.nextLong());
-        question.setQuestionText("been upset with a partner for not performing well.");
-        questions.add(question);
-
-        question = new Question();
-        question.setId(rand.nextLong());
-        question.setQuestionText("gotten dehydrated during a session.");
-        questions.add(question);
-
-        question = new Question();
-        question.setId(rand.nextLong());
-        question.setQuestionText("named a location after a session.");
-        questions.add(question);
-
-        question = new Question();
-        question.setId(rand.nextLong());
-        question.setQuestionText("sucked toes.");
-        questions.add(question);
-
-        question = new Question();
-        question.setId(rand.nextLong());
-        question.setQuestionText("done it with a family member in the same room (dirty!).");
-        questions.add(question);
-
-        question = new Question();
-        question.setId(rand.nextLong());
-        question.setQuestionText("done it With a family member in the same building.");
-        questions.add(question);
+        questions.add(new Question("been upset with a partner for not performing well."));
+        questions.add(new Question("gotten dehydrated during a session."));
+        questions.add(new Question("named a location after a session."));
+        questions.add(new Question("sucked toes."));
+        questions.add(new Question("done it with a family member in the same room (dirty!)."));
+        questions.add(new Question("done it With a family member in the same building."));
 
         getMvpView().refreshQuestionnaire(questions);
     }
 
     @Override
     public void onCardExhausted() {
-        Random rand = new Random();
-
         List<Question> questions = new ArrayList<>();
-        Question question = new Question();
-        question.setId(rand.nextLong());
-        question.setQuestionText("been upset with a partner for not performing well.");
-        questions.add(question);
-
-        question = new Question();
-        question.setId(rand.nextLong());
-        question.setQuestionText("gotten dehydrated during a session.");
-        questions.add(question);
-
-        question = new Question();
-        question.setId(rand.nextLong());
-        question.setQuestionText("named a location after a session.");
-        questions.add(question);
-
-        question = new Question();
-        question.setId(rand.nextLong());
-        question.setQuestionText("sucked toes.");
-        questions.add(question);
-
-        question = new Question();
-        question.setId(rand.nextLong());
-        question.setQuestionText("done it with a family member in the same room (dirty!).");
-        questions.add(question);
-
-        question = new Question();
-        question.setId(rand.nextLong());
-        question.setQuestionText("done it With a family member in the same building.");
-        questions.add(question);
+        questions.add(new Question("been upset with a partner for not performing well."));
+        questions.add(new Question("gotten dehydrated during a session."));
+        questions.add(new Question("named a location after a session."));
+        questions.add(new Question("sucked toes."));
+        questions.add(new Question("done it with a family member in the same room (dirty!)."));
+        questions.add(new Question("done it With a family member in the same building."));
 
         getMvpView().reloadQuestionnaire(questions);
     }

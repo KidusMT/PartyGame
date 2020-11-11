@@ -58,6 +58,9 @@ dependencies {
     implementation 'androidx.vectordrawable:vectordrawable-animated:1.1.0'
     implementation 'androidx.multidex:multidex:2.0.1'
 
+    // circular image view
+    implementation 'com.mikhaellopez:circularimageview:4.2.0'
+
     // sweet dialog
     implementation 'cn.pedant.sweetalert:library:1.3'
 

@@ -1,69 +1,117 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:fitsSystemWindows="true"
-    android:orientation="vertical">
+    android:layout_gravity="center_vertical"
+    android:fitsSystemWindows="true">
 
-
-        <com.google.android.material.appbar.AppBarLayout
-            android:id="@+id/appbarLayout"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:elevation="5dp">
-
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-                <androidx.appcompat.widget.Toolbar
-                    android:id="@+id/toolbar"
-                    android:layout_width="match_parent"
-                    android:layout_height="?actionBarSize"
-                    android:background="@color/colorPrimary"
-                    android:theme="@style/GalaxyZooThemeToolbarDarkOverflow" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerVertical="true"
-                    android:fontFamily="@font/helvetica_neue"
-                    android:paddingStart="@dimen/activity_vertical_margin"
-                    android:textColor="@color/white"
-                    android:paddingEnd="@dimen/activity_vertical_margin"
-                    android:text="@string/app_name"
-                    android:textSize="18sp" />
-            </RelativeLayout>
-
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:background="@color/light_gray" />
-
-        </com.google.android.material.appbar.AppBarLayout>
-
-    <RelativeLayout
-        android:layout_gravity="center_vertical"
+    <LinearLayout
+        android:id="@+id/top_container"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-        <TextView
-            android:id="@+id/top_text"
-            android:fontFamily="@font/helvetica_neue_lt"
-            android:textSize="30sp"
-            android:layout_marginTop="30dp"
-            android:textAlignment="center"
-            android:text="Never have I ever..."
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal">
 
-        <com.mindorks.placeholderview.SwipePlaceHolderView
-            android:id="@+id/cards_container"
-            android:layout_below="@id/top_text"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
 
-    </RelativeLayout>
+            <com.mikhaellopez.circularimageview.CircularImageView
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_margin="16dp"
+                android:src="@drawable/ic_party_fun"
+                app:civ_border_color="#3f51b5"
+                app:civ_border_width="2dp"
+                app:civ_shadow_color="#3f51b5"
+                app:civ_shadow_radius="10dp" />
 
-</LinearLayout>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/helvetica_neue_bold"
+                android:gravity="center_horizontal"
+                android:text="@string/party"
+                android:textColor="@color/mater_grey_900" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <com.mikhaellopez.circularimageview.CircularImageView
+                android:layout_width="70dp"
+                android:layout_height="50dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_margin="16dp"
+                android:src="@drawable/ic_party_normal"
+                app:civ_border_color="#3f51b5"
+                app:civ_border_width="2dp"
+                app:civ_shadow_color="#3f51b5"
+                app:civ_shadow_radius="10dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/helvetica_neue_bold"
+                android:gravity="center_horizontal"
+                android:text="@string/fun"
+                android:textColor="@color/mater_grey_900" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <com.mikhaellopez.circularimageview.CircularImageView
+                android:layout_width="70dp"
+                android:layout_height="50dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_margin="16dp"
+                android:src="@drawable/ic_party_dirty"
+                app:civ_border_color="#3f51b5"
+                app:civ_border_width="2dp"
+                app:civ_shadow_color="#3f51b5"
+                app:civ_shadow_radius="10dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/helvetica_neue_bold"
+                android:gravity="center_horizontal"
+                android:text="@string/dirty"
+                android:textColor="@color/mater_grey_900" />
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/top_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/top_container"
+        android:layout_marginTop="@dimen/activity_vertical_margin"
+        android:layout_marginBottom="@dimen/activity_vertical_margin"
+        android:fontFamily="@font/lemon_jelly"
+        android:gravity="center"
+        android:text="@string/never_have_i_ever"
+        android:textColor="#3f51b5"
+        android:textSize="40sp" />
+
+    <com.mindorks.placeholderview.SwipePlaceHolderView
+        android:id="@+id/cards_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/top_text" />
+
+</RelativeLayout>
+
