@@ -8,8 +8,10 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.ScaleAnimation;
+import android.widget.ImageView;
 
 import com.kmt.party.R;
 import com.kmt.party.data.model.Question;
@@ -18,12 +20,14 @@ import com.kmt.party.utils.ScreenUtils;
 import com.mindorks.placeholderview.SwipeDecor;
 import com.mindorks.placeholderview.SwipePlaceHolderView;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.inject.Inject;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import butterknife.OnClick;
 
 public class MainActivity extends BaseActivity implements MainMvpView {
 
@@ -32,6 +36,12 @@ public class MainActivity extends BaseActivity implements MainMvpView {
 
     @BindView(R.id.cards_container)
     SwipePlaceHolderView mCardsContainerView;
+    @BindView(R.id.btn_dirty_selected)
+    ImageView btnSelectedDirty;
+    @BindView(R.id.btn_fun_selected)
+    ImageView btnSelectedFun;
+    @BindView(R.id.btn_party_selected)
+    ImageView btnSelectedParty;
 
     public static Intent getStartIntent(Context context) {
         return new Intent(context, MainActivity.class);
@@ -62,10 +72,37 @@ public class MainActivity extends BaseActivity implements MainMvpView {
         super.onDestroy();
     }
 
+    @OnClick(R.id.btn_party)
+    void onPartyClick(){
+        hideSelectionBtns();
+        btnSelectedParty.setVisibility(View.VISIBLE);
+        mPresenter.onPartyClicked();
+    }
+
+    @OnClick(R.id.btn_dirty)
+    void onDirtyClick(){
+        hideSelectionBtns();
+        btnSelectedDirty.setVisibility(View.VISIBLE);
+        mPresenter.onDirtyClicked();
+    }
+
+    @OnClick(R.id.btn_fun)
+    void onFunClick(){
+        hideSelectionBtns();
+        mPresenter.onFunnyClicked();
+        btnSelectedFun.setVisibility(View.VISIBLE);
+    }
+
+    private void hideSelectionBtns(){
+        btnSelectedDirty.setVisibility(View.GONE);
+        btnSelectedFun.setVisibility(View.GONE);
+        btnSelectedParty.setVisibility(View.GONE);
+    }
     @Override
     protected void setUp() {
         setupCardContainerView();
         mPresenter.onCardExhausted();
+        hideSelectionBtns();
     }
 
     @Override
@@ -104,6 +141,7 @@ public class MainActivity extends BaseActivity implements MainMvpView {
 
     @Override
     public void reloadQuestionnaire(List<Question> questionList) {
+        mCardsContainerView.removeAllViews();
         refreshQuestionnaire(questionList);
         ScaleAnimation animation = new ScaleAnimation(
                 1.15f, 1, 1.15f, 1,
