@@ -19,6 +19,13 @@
     <color name="fb" tools:keep="@color/fb">#3b5998</color>
     <color name="google" tools:keep="@color/google">#d34836</color>
 
+    <color name="selection_1">#DA2267</color>
+    <color name="selection_2">#E9C121</color>
+    <color name="selection_3">#11A3D9</color>
+    <color name="selection_4">#CE03E5</color>
+    <color name="selection_5">#1B3C45</color>
+    <color name="selection_6">#08776F</color>
+
     <!--Design colors-->
     <color name="red_dark" tools:keep="@color/red_dark">#F06423</color>
     <color name="red_dark2" tools:keep="@color/red_dark2">#D85A1B</color>

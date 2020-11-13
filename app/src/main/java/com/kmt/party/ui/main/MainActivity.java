@@ -2,6 +2,8 @@ package com.kmt.party.ui.main;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.BitmapFactory;
+import android.graphics.Color;
 import android.graphics.drawable.Animatable;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
@@ -13,6 +15,8 @@ import android.view.animation.Animation;
 import android.view.animation.ScaleAnimation;
 import android.widget.ImageView;
 
+import com.bluehomestudio.luckywheel.LuckyWheel;
+import com.bluehomestudio.luckywheel.WheelItem;
 import com.kmt.party.R;
 import com.kmt.party.data.model.Question;
 import com.kmt.party.ui.base.BaseActivity;
@@ -34,6 +38,8 @@ public class MainActivity extends BaseActivity implements MainMvpView {
     @Inject
     MainMvpPresenter<MainMvpView> mPresenter;
 
+//    @BindView(R.id.lwv)
+//    LuckyWheel luckyWheel;
     @BindView(R.id.cards_container)
     SwipePlaceHolderView mCardsContainerView;
     @BindView(R.id.btn_dirty_selected)
@@ -103,6 +109,31 @@ public class MainActivity extends BaseActivity implements MainMvpView {
         setupCardContainerView();
         mPresenter.onCardExhausted();
         hideSelectionBtns();
+//        List<WheelItem> wheelItems = new ArrayList<>();
+//        wheelItems.add(new WheelItem(Color.BLUE,
+//                BitmapFactory.decodeResource(getResources(), R.drawable.ic_action_name), "Bezos"));
+//
+//        wheelItems.add(new WheelItem(Color.CYAN,
+//                BitmapFactory.decodeResource(getResources(), R.drawable.ic_action_name), "Gates"));
+//
+//        wheelItems.add(new WheelItem(Color.MAGENTA,
+//                BitmapFactory.decodeResource(getResources(), R.drawable.ic_action_name), "Arnault"));
+//
+//        wheelItems.add(new WheelItem(Color.RED,
+//                BitmapFactory.decodeResource(getResources(), R.drawable.ic_action_name), "Buffett"));
+//
+//        wheelItems.add(new WheelItem(Color.YELLOW,
+//                BitmapFactory.decodeResource(getResources(), R.drawable.ic_action_name), "Ellison"));
+//
+//        wheelItems.add(new WheelItem(Color.LTGRAY,
+//                BitmapFactory.decodeResource(getResources(), R.drawable.ic_action_name), "Ortega"));
+//
+//        luckyWheel.addWheelItems(wheelItems);
+//        luckyWheel.setTarget(3);
+//        luckyWheel.rotateWheelTo(2);
+//        luckyWheel.setLuckyWheelReachTheTarget(() -> {
+//
+//        });
     }
 
     @Override

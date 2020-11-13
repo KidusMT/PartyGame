@@ -3,6 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:LuckyWheel="http://schemas.android.com/tools"
     android:layout_gravity="center_vertical"
     android:fitsSystemWindows="true">
 
@@ -149,13 +150,21 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/top_container"
-        android:layout_marginTop="@dimen/activity_vertical_margin"
-        android:layout_marginBottom="@dimen/activity_vertical_margin"
-        android:fontFamily="@font/lemon_jelly"
+        android:layout_margin="@dimen/activity_vertical_margin"
+        android:fontFamily="@font/stalinist_one_regular"
         android:gravity="center"
         android:text="@string/never_have_i_ever"
         android:textColor="#3f51b5"
-        android:textSize="40sp" />
+        android:textSize="30sp" />
+
+    <com.bluehomestudio.luckywheel.LuckyWheel
+        android:id="@+id/lwv"
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        android:visibility="gone"
+        android:layout_centerInParent="true"
+        app:arrow_image="@drawable/ic_selection_arrow"
+        LuckyWheel:background_color="@color/mater_grey_400" />
 
     <com.mindorks.placeholderview.SwipePlaceHolderView
         android:id="@+id/cards_container"
