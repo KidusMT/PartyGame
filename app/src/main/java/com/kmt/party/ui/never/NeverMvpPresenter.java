@@ -1,11 +1,11 @@
-package com.kmt.party.ui.main;
+package com.kmt.party.ui.never;
 
 import com.kmt.party.di.PerActivity;
 import com.kmt.party.ui.base.MvpPresenter;
 
 @SuppressWarnings({"unused", "RedundantSuppression", "EmptyMethod"})
 @PerActivity
-public interface MainMvpPresenter<V extends MainMvpView> extends MvpPresenter<V> {
+public interface NeverMvpPresenter<V extends NeverMvpView> extends MvpPresenter<V> {
 
     void onViewInitialized();
 

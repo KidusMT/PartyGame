@@ -7,9 +7,16 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 
 import com.kmt.party.di.ActivityContext;
 import com.kmt.party.di.PerActivity;
-import com.kmt.party.ui.main.MainMvpPresenter;
-import com.kmt.party.ui.main.MainMvpView;
-import com.kmt.party.ui.main.MainPresenter;
+import com.kmt.party.ui.base.MvpPresenter;
+import com.kmt.party.ui.drinking.DrinkingRouletteMvpPresenter;
+import com.kmt.party.ui.drinking.DrinkingRouletteMvpView;
+import com.kmt.party.ui.drinking.DrinkingRoulettePresenter;
+import com.kmt.party.ui.never.NeverMvpPresenter;
+import com.kmt.party.ui.never.NeverMvpView;
+import com.kmt.party.ui.never.NeverPresenter;
+import com.kmt.party.ui.menu.MenuMvpPresenter;
+import com.kmt.party.ui.menu.MenuMvpView;
+import com.kmt.party.ui.menu.MenuPresenter;
 import com.kmt.party.utils.rx.AppSchedulerProvider;
 import com.kmt.party.utils.rx.SchedulerProvider;
 
@@ -49,8 +56,22 @@ public class ActivityModule {
 
     @Provides
     @PerActivity
-    MainMvpPresenter<MainMvpView> provideMainPresenter(
-            MainPresenter<MainMvpView> presenter) {
+    NeverMvpPresenter<NeverMvpView> provideMainPresenter(
+            NeverPresenter<NeverMvpView> presenter) {
+        return presenter;
+    }
+
+    @Provides
+    @PerActivity
+    MenuMvpPresenter<MenuMvpView> provideMenuPresenter(
+            MenuPresenter<MenuMvpView> presenter) {
+        return presenter;
+    }
+
+    @Provides
+    @PerActivity
+    DrinkingRouletteMvpPresenter<DrinkingRouletteMvpView> provideDrinkingRoulettePresenter(
+            DrinkingRoulettePresenter<DrinkingRouletteMvpView> presenter) {
         return presenter;
     }
 

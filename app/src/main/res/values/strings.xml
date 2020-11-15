@@ -7,6 +7,6 @@
     <string name="party">Party</string>
     <string name="fun">Fun</string>
     <string name="dirty">Dirty</string>
-    <string name="never_have_i_ever">Never have I ever...</string>
+    <string name="never_have_i_ever">Never have \nI ever...</string>
 
 </resources>

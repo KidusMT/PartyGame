@@ -1,4 +1,4 @@
-package com.kmt.party.ui.main;
+package com.kmt.party.ui.never;
 
 import android.widget.TextView;
 
@@ -11,7 +11,7 @@ import com.mindorks.placeholderview.annotations.View;
 
 @NonReusable
 @Layout(R.layout.card_layout)
-public class QuestionCard {
+public class NeverQuestionCard {
 
     private static final String TAG = "QuestionCard";
 
@@ -20,7 +20,7 @@ public class QuestionCard {
 
     private Question mQuestion;
 
-    public QuestionCard(Question question) {
+    public NeverQuestionCard(Question question) {
         mQuestion = question;
     }
 

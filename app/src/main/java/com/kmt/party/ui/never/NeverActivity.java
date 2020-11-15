@@ -1,9 +1,7 @@
-package com.kmt.party.ui.main;
+package com.kmt.party.ui.never;
 
 import android.content.Context;
 import android.content.Intent;
-import android.graphics.BitmapFactory;
-import android.graphics.Color;
 import android.graphics.drawable.Animatable;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
@@ -15,8 +13,6 @@ import android.view.animation.Animation;
 import android.view.animation.ScaleAnimation;
 import android.widget.ImageView;
 
-import com.bluehomestudio.luckywheel.LuckyWheel;
-import com.bluehomestudio.luckywheel.WheelItem;
 import com.kmt.party.R;
 import com.kmt.party.data.model.Question;
 import com.kmt.party.ui.base.BaseActivity;
@@ -24,7 +20,7 @@ import com.kmt.party.utils.ScreenUtils;
 import com.mindorks.placeholderview.SwipeDecor;
 import com.mindorks.placeholderview.SwipePlaceHolderView;
 
-import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 import javax.inject.Inject;
@@ -33,10 +29,10 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
-public class MainActivity extends BaseActivity implements MainMvpView {
+public class NeverActivity extends BaseActivity implements NeverMvpView {
 
     @Inject
-    MainMvpPresenter<MainMvpView> mPresenter;
+    NeverMvpPresenter<NeverMvpView> mPresenter;
 
 //    @BindView(R.id.lwv)
 //    LuckyWheel luckyWheel;
@@ -48,9 +44,14 @@ public class MainActivity extends BaseActivity implements MainMvpView {
     ImageView btnSelectedFun;
     @BindView(R.id.btn_party_selected)
     ImageView btnSelectedParty;
+    @OnClick(R.id.btn_instruction)
+    void onInstructionClicked(){
+        showMessage("instruction clicked");
+    }
+
 
     public static Intent getStartIntent(Context context) {
-        return new Intent(context, MainActivity.class);
+        return new Intent(context, NeverActivity.class);
     }
 
     @Override
@@ -140,7 +141,8 @@ public class MainActivity extends BaseActivity implements MainMvpView {
     public void refreshQuestionnaire(List<Question> questionList) {
         for (Question question : questionList) {
             if (question != null) {
-                mCardsContainerView.addView(new QuestionCard(question));
+                Collections.shuffle(questionList);
+                mCardsContainerView.addView(new NeverQuestionCard(question));
             }
         }
     }
@@ -151,7 +153,7 @@ public class MainActivity extends BaseActivity implements MainMvpView {
         int screenHeight = ScreenUtils.getScreenHeight(this);
 
         mCardsContainerView.getBuilder()
-                .setDisplayViewCount(3)
+                .setDisplayViewCount(1)
                 .setHeightSwipeDistFactor(10)
                 .setWidthSwipeDistFactor(5)
                 .setSwipeDecor(new SwipeDecor()
@@ -174,6 +176,7 @@ public class MainActivity extends BaseActivity implements MainMvpView {
     public void reloadQuestionnaire(List<Question> questionList) {
         mCardsContainerView.removeAllViews();
         refreshQuestionnaire(questionList);
+        Collections.shuffle(questionList);
         ScaleAnimation animation = new ScaleAnimation(
                 1.15f, 1, 1.15f, 1,
                 Animation.RELATIVE_TO_SELF, 0.5f,

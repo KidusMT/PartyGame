@@ -4,12 +4,10 @@ import android.os.Bundle;
 import android.widget.TextView;
 
 import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatDelegate;
 
-import com.kmt.party.MvpApp;
 import com.kmt.party.R;
 import com.kmt.party.ui.base.BaseActivity;
-import com.kmt.party.ui.main.MainActivity;
+import com.kmt.party.ui.menu.MenuActivity;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -37,7 +35,7 @@ public class SplashActivity extends BaseActivity {
     protected void onPostResume() {
         super.onPostResume();
         tvWelcome.postDelayed(() -> {
-            startActivity(MainActivity.getStartIntent(this));
+            startActivity(MenuActivity.getStartIntent(this));
             finish();
         }, 1000);
     }

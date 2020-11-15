@@ -1,4 +1,4 @@
-package com.kmt.party.ui.main;
+package com.kmt.party.ui.never;
 
 import com.kmt.party.data.DataManager;
 import com.kmt.party.data.model.Question;
@@ -12,15 +12,15 @@ import javax.inject.Inject;
 
 import io.reactivex.disposables.CompositeDisposable;
 
-public class MainPresenter<V extends MainMvpView> extends BasePresenter<V> implements MainMvpPresenter<V> {
+public class NeverPresenter<V extends NeverMvpView> extends BasePresenter<V> implements NeverMvpPresenter<V> {
 
     @SuppressWarnings({"unused", "RedundantSuppression"})
-    private static final String TAG = MainPresenter.class.getSimpleName();
+    private static final String TAG = NeverPresenter.class.getSimpleName();
     private List<Question> questionList = new ArrayList<>();
     @Inject
-    public MainPresenter(DataManager dataManager,
-                         SchedulerProvider schedulerProvider,
-                         CompositeDisposable compositeDisposable) {
+    public NeverPresenter(DataManager dataManager,
+                          SchedulerProvider schedulerProvider,
+                          CompositeDisposable compositeDisposable) {
         super(dataManager, schedulerProvider, compositeDisposable);
     }
 

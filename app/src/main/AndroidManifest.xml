@@ -33,12 +33,16 @@
         </activity>
 
         <activity
-            android:name="com.kmt.party.ui.main.MainActivity"
+            android:name="com.kmt.party.ui.never.NeverActivity"
             android:launchMode="singleTop">
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
             </intent-filter>
         </activity>
+
+        <activity
+            android:name="com.kmt.party.ui.menu.MenuActivity"
+            android:launchMode="singleTop"/>
     </application>
 
 </manifest>
