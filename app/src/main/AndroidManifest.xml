@@ -10,13 +10,13 @@
         android:name="com.kmt.party.MvpApp"
         android:allowBackup="true"
         android:configChanges="locale"
+        android:fullBackupContent="@xml/backup_descriptor"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
-        tools:replace="android:icon"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true"
-        android:fullBackupContent="@xml/backup_descriptor"
+        tools:replace="android:icon"
         tools:targetApi="m">
 
         <service android:name="com.kmt.party.service.SyncService" />
@@ -42,7 +42,11 @@
 
         <activity
             android:name="com.kmt.party.ui.menu.MenuActivity"
-            android:launchMode="singleTop"/>
+            android:launchMode="singleTop" />
+
+        <activity
+            android:name="com.kmt.party.ui.drinking.DrinkingRouletteActivity"
+            android:launchMode="singleTop" />
     </application>
 
 </manifest>
