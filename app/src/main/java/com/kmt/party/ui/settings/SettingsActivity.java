@@ -3,12 +3,10 @@ package com.kmt.party.ui.settings;
 import android.Manifest;
 import android.content.Context;
 import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
 
-import androidx.appcompat.widget.SwitchCompat;
 import com.kmt.party.R;
 import com.kmt.party.ui.base.BaseActivity;
 import com.kmt.party.ui.never.NeverActivity;
@@ -60,32 +58,30 @@ public class SettingsActivity extends BaseActivity implements SettingsMvpView {
 
     @Override
     public void setCurrentLanguage(String language) {
+        changeLanguage(language);
+    }
+
+    public void changeLanguage(String language) {
         if (language.equals(getString(R.string.lang_english_abbr))) {
             mCurrentLanguage.setText(R.string.lang_english);
-        } else if (language.equals(getString(R.string.lang_amharic_abbr))) {
-            mCurrentLanguage.setText(R.string.lang_amharic);
+        } else if (language.equals(getString(R.string.lang_russian_abbr))) {
+            mCurrentLanguage.setText(R.string.lang_russian);
+        } else if (language.equals(getString(R.string.lang_spanish_abbr))) {
+            mCurrentLanguage.setText(R.string.lang_spanish);
+        } else if (language.equals(getString(R.string.lang_portuguese_abbr))) {
+            mCurrentLanguage.setText(R.string.lang_portuguese);
+        } else if (language.equals(getString(R.string.lang_german_abbr))) {
+            mCurrentLanguage.setText(R.string.lang_german);
+        } else if (language.equals(getString(R.string.lang_french_abbr))) {
+            mCurrentLanguage.setText(R.string.lang_french);
+        } else if (language.equals(getString(R.string.lang_japanese_abbr))) {
+            mCurrentLanguage.setText(R.string.lang_japanese);
         }
     }
 
     @OnClick(R.id.layout_current_language)
     public void onClickCurrentLanguage(View view) {
         startActivity(new Intent(this, LanguageListActivity.class));
-    }
-
-    private boolean checkLocationPermissionStatus() {
-        return hasPermission(Manifest.permission.ACCESS_FINE_LOCATION);
-    }
-
-    private boolean checkStoragePermissionStatus() {
-        return hasPermission(Manifest.permission.READ_EXTERNAL_STORAGE);
-    }
-
-    private boolean checkMicrophonePermissionStatus() {
-        return hasPermission(Manifest.permission.RECORD_AUDIO);
-    }
-
-    private boolean checkCameraPermissionStatus() {
-        return hasPermission(Manifest.permission.CAMERA);
     }
 
     @Override

@@ -19,11 +19,20 @@
     <string name="japanese" translatable="false">日本人</string>
     <string name="available_language">Available languages</string>
 
-
     <string name="lang_english">English</string>
-    <string name="lang_amharic">Amharic</string>
-    <string name="lang_english_abbr">en</string>
-    <string name="lang_amharic_abbr">am</string>
+    <string name="lang_russian">Russian</string>
+    <string name="lang_spanish">Spanish</string>
+    <string name="lang_portuguese">Portuguese</string>
+    <string name="lang_german">German</string>
+    <string name="lang_french">French</string>
+    <string name="lang_japanese">Japanese</string>
+    <string name="lang_english_abbr" translatable="false">en</string>
+    <string name="lang_russian_abbr" translatable="false">ru</string>
+    <string name="lang_spanish_abbr" translatable="false">es</string>
+    <string name="lang_portuguese_abbr" translatable="false">pt</string>
+    <string name="lang_german_abbr" translatable="false">de</string>
+    <string name="lang_french_abbr" translatable="false">fr</string>
+    <string name="lang_japanese_abbr" translatable="false">ja</string>
 
 
     <string name="account_settings">Account settings</string>
