@@ -121,31 +121,6 @@ public class NeverActivity extends BaseActivity implements NeverMvpView {
         setupCardContainerView();
         mPresenter.onCardExhausted();
         hideSelectionBtns();
-//        List<WheelItem> wheelItems = new ArrayList<>();
-//        wheelItems.add(new WheelItem(Color.BLUE,
-//                BitmapFactory.decodeResource(getResources(), R.drawable.ic_action_name), "Bezos"));
-//
-//        wheelItems.add(new WheelItem(Color.CYAN,
-//                BitmapFactory.decodeResource(getResources(), R.drawable.ic_action_name), "Gates"));
-//
-//        wheelItems.add(new WheelItem(Color.MAGENTA,
-//                BitmapFactory.decodeResource(getResources(), R.drawable.ic_action_name), "Arnault"));
-//
-//        wheelItems.add(new WheelItem(Color.RED,
-//                BitmapFactory.decodeResource(getResources(), R.drawable.ic_action_name), "Buffett"));
-//
-//        wheelItems.add(new WheelItem(Color.YELLOW,
-//                BitmapFactory.decodeResource(getResources(), R.drawable.ic_action_name), "Ellison"));
-//
-//        wheelItems.add(new WheelItem(Color.LTGRAY,
-//                BitmapFactory.decodeResource(getResources(), R.drawable.ic_action_name), "Ortega"));
-//
-//        luckyWheel.addWheelItems(wheelItems);
-//        luckyWheel.setTarget(3);
-//        luckyWheel.rotateWheelTo(2);
-//        luckyWheel.setLuckyWheelReachTheTarget(() -> {
-//
-//        });
     }
 
     @Override
