@@ -110,6 +110,12 @@ public class NeverActivity extends BaseActivity implements NeverMvpView {
         btnSelectedParty.setVisibility(View.GONE);
     }
 
+    @OnClick(R.id.btn_back)
+    public void OnClickBack(View view) {
+        onBackPressed();
+        finish();
+    }
+
     @Override
     protected void setUp() {
         setupCardContainerView();

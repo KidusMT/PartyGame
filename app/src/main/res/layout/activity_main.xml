@@ -191,23 +191,12 @@
         </LinearLayout>
     </LinearLayout>
 
-    <TextView
-        android:id="@+id/top_text"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/top_container"
-        android:fontFamily="@font/bungee_shade"
-        android:gravity="center"
-        android:text="@string/never_have_i_ever"
-        android:textColor="#3f51b5"
-        android:textSize="40sp" />
-
 
     <com.mindorks.placeholderview.SwipePlaceHolderView
         android:id="@+id/cards_container"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/top_text" />
+        android:layout_below="@id/top_container" />
 
 </RelativeLayout>
 

@@ -47,6 +47,14 @@
         <activity
             android:name="com.kmt.party.ui.drinking.DrinkingRouletteActivity"
             android:launchMode="singleTop" />
+
+        <activity
+            android:name="com.kmt.party.ui.settings.SettingsActivity"
+            android:launchMode="singleTop" />
+
+        <activity
+            android:name="com.kmt.party.ui.settings.LanguageListActivity"
+            android:launchMode="singleTop" />
     </application>
 
 </manifest>
