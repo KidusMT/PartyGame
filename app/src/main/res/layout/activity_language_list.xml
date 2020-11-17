@@ -1,313 +1,338 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:orientation="vertical"
     android:background="@color/white"
+    android:orientation="vertical"
     tools:context=".ui.settings.LanguageListActivity">
-
 
 
     <RelativeLayout
         android:id="@+id/toolbar_container"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
+
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="?actionBarSize"
-            android:background="@color/colorPrimaryDark"
-            >
+            android:background="@color/colorPrimaryDark">
 
             <LinearLayout
-                android:gravity="left"
-                android:orientation="horizontal"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:gravity="left"
+                android:orientation="horizontal">
 
                 <ImageView
                     android:id="@+id/back_button"
-                    app:srcCompat="@drawable/ic_chevron_white"
                     android:layout_width="36dp"
-                    android:layout_height="36dp" />
+                    android:layout_height="36dp"
+                    android:paddingTop="8dp"
+                    android:paddingBottom="8dp"
+                    app:srcCompat="@drawable/ic_chevron_white" />
 
             </LinearLayout>
         </androidx.appcompat.widget.Toolbar>
+
         <TextView
-            android:textSize="18sp"
-            android:textColor="@color/white"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_centerInParent="true"
             android:text="@string/available_language"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:textColor="@color/white"
+            android:textSize="18sp" />
 
 
     </RelativeLayout>
 
-   <LinearLayout
-       android:orientation="vertical"
-       android:layout_width="match_parent"
-       android:layout_height="wrap_content"
-       android:layout_marginTop="?actionBarSize">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="?actionBarSize"
+        android:orientation="vertical">
 
-       <LinearLayout
-           android:layout_marginTop="@dimen/activity_vertical_margin"
-           android:layout_marginRight="16dp"
-           android:clickable="true"
-           android:foreground="?android:attr/selectableItemBackground"
-           android:id="@+id/check_english_container"
-           android:orientation="horizontal"
-           android:layout_width="match_parent"
-           android:layout_height="wrap_content">
+        <LinearLayout
+            android:id="@+id/check_english_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/activity_vertical_margin"
+            android:layout_marginRight="16dp"
+            android:clickable="true"
+            android:foreground="?android:attr/selectableItemBackground"
+            android:orientation="horizontal">
 
-           <RadioButton
-               android:layout_marginLeft="16dp"
-               android:id="@+id/check_english"
-               android:layout_marginRight="8dp"
-               android:layout_width="wrap_content"
-               android:layout_height="wrap_content" />
-           <LinearLayout
-               android:layout_weight="1"
-               android:orientation="vertical"
-               android:layout_width="wrap_content"
-               android:layout_height="wrap_content">
-               <TextView
-                   android:textSize="22sp"
-                   android:text="@string/english"
-                   android:layout_width="wrap_content"
-                   android:layout_height="wrap_content" />
-               <ImageView
-                   android:layout_marginTop="8dp"
-                   android:background="@color/gray"
-                   android:layout_width="match_parent"
-                   android:layout_height="1px" />
+            <RadioButton
+                android:id="@+id/check_english"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="8dp" />
 
-           </LinearLayout>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
 
-       </LinearLayout>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/english"
+                    android:textSize="22sp" />
 
-       <LinearLayout
-           android:layout_marginBottom="8dp"
-           android:layout_marginTop="8dp"
-           android:layout_marginRight="16dp"
-           android:clickable="true"
-           android:foreground="?android:attr/selectableItemBackground"
-           android:id="@+id/check_russian_container"
-           android:orientation="horizontal"
-           android:layout_width="match_parent"
-           android:layout_height="wrap_content">
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="1px"
+                    android:layout_marginTop="8dp"
+                    android:background="@color/gray" />
 
-           <RadioButton
-               android:layout_marginLeft="16dp"
-               android:id="@+id/check_russian"
-               android:layout_marginRight="8dp"
-               android:layout_width="wrap_content"
-               android:layout_height="wrap_content" />
-           <LinearLayout
-               android:layout_weight="1"
-               android:orientation="vertical"
-               android:layout_width="wrap_content"
-               android:layout_height="wrap_content">
-               <TextView
-                   android:textSize="22sp"
-                   android:text="@string/russian"
-                   android:layout_width="wrap_content"
-                   android:layout_height="wrap_content" />
-               <ImageView
-                   android:layout_marginTop="8dp"
-                   android:background="@color/gray"
-                   android:layout_width="match_parent"
-                   android:layout_height="1px" />
+            </LinearLayout>
 
-           </LinearLayout>
+        </LinearLayout>
 
-       </LinearLayout>
-       <LinearLayout
-           android:layout_marginBottom="8dp"
-           android:layout_marginTop="8dp"
-           android:layout_marginRight="16dp"
-           android:clickable="true"
-           android:foreground="?android:attr/selectableItemBackground"
-           android:id="@+id/check_spanish_container"
-           android:orientation="horizontal"
-           android:layout_width="match_parent"
-           android:layout_height="wrap_content">
+        <LinearLayout
+            android:id="@+id/check_russian_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginBottom="8dp"
+            android:clickable="true"
+            android:foreground="?android:attr/selectableItemBackground"
+            android:orientation="horizontal">
 
-           <RadioButton
-               android:layout_marginLeft="16dp"
-               android:id="@+id/check_spanish"
-               android:layout_marginRight="8dp"
-               android:layout_width="wrap_content"
-               android:layout_height="wrap_content" />
-           <LinearLayout
-               android:layout_weight="1"
-               android:orientation="vertical"
-               android:layout_width="wrap_content"
-               android:layout_height="wrap_content">
-               <TextView
-                   android:textSize="22sp"
-                   android:text="@string/spanish"
-                   android:layout_width="wrap_content"
-                   android:layout_height="wrap_content" />
-               <ImageView
-                   android:layout_marginTop="8dp"
-                   android:background="@color/gray"
-                   android:layout_width="match_parent"
-                   android:layout_height="1px" />
+            <RadioButton
+                android:id="@+id/check_russian"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="8dp" />
 
-           </LinearLayout>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
 
-       </LinearLayout>
-       <LinearLayout
-           android:layout_marginBottom="8dp"
-           android:layout_marginTop="8dp"
-           android:layout_marginRight="16dp"
-           android:clickable="true"
-           android:foreground="?android:attr/selectableItemBackground"
-           android:id="@+id/check_portuguese_container"
-           android:orientation="horizontal"
-           android:layout_width="match_parent"
-           android:layout_height="wrap_content">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/russian"
+                    android:textSize="22sp" />
 
-           <RadioButton
-               android:layout_marginLeft="16dp"
-               android:id="@+id/check_portuguese"
-               android:layout_marginRight="8dp"
-               android:layout_width="wrap_content"
-               android:layout_height="wrap_content" />
-           <LinearLayout
-               android:layout_weight="1"
-               android:orientation="vertical"
-               android:layout_width="wrap_content"
-               android:layout_height="wrap_content">
-               <TextView
-                   android:textSize="22sp"
-                   android:text="@string/portuguese"
-                   android:layout_width="wrap_content"
-                   android:layout_height="wrap_content" />
-               <ImageView
-                   android:layout_marginTop="8dp"
-                   android:background="@color/gray"
-                   android:layout_width="match_parent"
-                   android:layout_height="1px" />
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="1px"
+                    android:layout_marginTop="8dp"
+                    android:background="@color/gray" />
 
-           </LinearLayout>
+            </LinearLayout>
 
-       </LinearLayout>
-       <LinearLayout
-           android:layout_marginBottom="8dp"
-           android:layout_marginTop="8dp"
-           android:layout_marginRight="16dp"
-           android:clickable="true"
-           android:foreground="?android:attr/selectableItemBackground"
-           android:id="@+id/check_german_container"
-           android:orientation="horizontal"
-           android:layout_width="match_parent"
-           android:layout_height="wrap_content">
+        </LinearLayout>
 
-           <RadioButton
-               android:layout_marginLeft="16dp"
-               android:id="@+id/check_german"
-               android:layout_marginRight="8dp"
-               android:layout_width="wrap_content"
-               android:layout_height="wrap_content" />
-           <LinearLayout
-               android:layout_weight="1"
-               android:orientation="vertical"
-               android:layout_width="wrap_content"
-               android:layout_height="wrap_content">
-               <TextView
-                   android:textSize="22sp"
-                   android:text="@string/german"
-                   android:layout_width="wrap_content"
-                   android:layout_height="wrap_content" />
-               <ImageView
-                   android:layout_marginTop="8dp"
-                   android:background="@color/gray"
-                   android:layout_width="match_parent"
-                   android:layout_height="1px" />
+        <LinearLayout
+            android:id="@+id/check_spanish_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginBottom="8dp"
+            android:clickable="true"
+            android:foreground="?android:attr/selectableItemBackground"
+            android:orientation="horizontal">
 
-           </LinearLayout>
+            <RadioButton
+                android:id="@+id/check_spanish"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="8dp" />
 
-       </LinearLayout>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
 
-       <LinearLayout
-           android:layout_marginBottom="8dp"
-           android:layout_marginTop="8dp"
-           android:layout_marginRight="16dp"
-           android:clickable="true"
-           android:foreground="?android:attr/selectableItemBackground"
-           android:id="@+id/check_french_container"
-           android:orientation="horizontal"
-           android:layout_width="match_parent"
-           android:layout_height="wrap_content">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/spanish"
+                    android:textSize="22sp" />
 
-           <RadioButton
-               android:layout_marginLeft="16dp"
-               android:id="@+id/check_french"
-               android:layout_marginRight="8dp"
-               android:layout_width="wrap_content"
-               android:layout_height="wrap_content" />
-           <LinearLayout
-               android:layout_weight="1"
-               android:orientation="vertical"
-               android:layout_width="wrap_content"
-               android:layout_height="wrap_content">
-               <TextView
-                   android:textSize="22sp"
-                   android:text="@string/french"
-                   android:layout_width="wrap_content"
-                   android:layout_height="wrap_content" />
-               <ImageView
-                   android:layout_marginTop="8dp"
-                   android:background="@color/gray"
-                   android:layout_width="match_parent"
-                   android:layout_height="1px" />
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="1px"
+                    android:layout_marginTop="8dp"
+                    android:background="@color/gray" />
 
-           </LinearLayout>
+            </LinearLayout>
 
-       </LinearLayout>
-       <LinearLayout
-           android:layout_marginBottom="8dp"
-           android:layout_marginTop="8dp"
-           android:layout_marginRight="16dp"
-           android:clickable="true"
-           android:foreground="?android:attr/selectableItemBackground"
-           android:id="@+id/check_japanese_container"
-           android:orientation="horizontal"
-           android:layout_width="match_parent"
-           android:layout_height="wrap_content">
+        </LinearLayout>
 
-           <RadioButton
-               android:layout_marginLeft="16dp"
-               android:id="@+id/check_japanese"
-               android:layout_marginRight="8dp"
-               android:layout_width="wrap_content"
-               android:layout_height="wrap_content" />
-           <LinearLayout
-               android:layout_weight="1"
-               android:orientation="vertical"
-               android:layout_width="wrap_content"
-               android:layout_height="wrap_content">
-               <TextView
-                   android:textSize="22sp"
-                   android:text="@string/japanese"
-                   android:layout_width="wrap_content"
-                   android:layout_height="wrap_content" />
-               <ImageView
-                   android:layout_marginTop="8dp"
-                   android:background="@color/gray"
-                   android:layout_width="match_parent"
-                   android:layout_height="1px" />
+        <LinearLayout
+            android:id="@+id/check_portuguese_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginBottom="8dp"
+            android:clickable="true"
+            android:foreground="?android:attr/selectableItemBackground"
+            android:orientation="horizontal">
 
-           </LinearLayout>
+            <RadioButton
+                android:id="@+id/check_portuguese"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="8dp" />
 
-       </LinearLayout>
-   </LinearLayout>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
 
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/portuguese"
+                    android:textSize="22sp" />
 
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="1px"
+                    android:layout_marginTop="8dp"
+                    android:background="@color/gray" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/check_german_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginBottom="8dp"
+            android:clickable="true"
+            android:foreground="?android:attr/selectableItemBackground"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/check_german"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="8dp" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/german"
+                    android:textSize="22sp" />
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="1px"
+                    android:layout_marginTop="8dp"
+                    android:background="@color/gray" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/check_french_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginBottom="8dp"
+            android:clickable="true"
+            android:foreground="?android:attr/selectableItemBackground"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/check_french"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="8dp" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/french"
+                    android:textSize="22sp" />
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="1px"
+                    android:layout_marginTop="8dp"
+                    android:background="@color/gray" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/check_japanese_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginBottom="8dp"
+            android:clickable="true"
+            android:foreground="?android:attr/selectableItemBackground"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/check_japanese"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="8dp" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/japanese"
+                    android:textSize="22sp" />
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="1px"
+                    android:layout_marginTop="8dp"
+                    android:background="@color/gray" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </LinearLayout>
 
 
 </RelativeLayout>

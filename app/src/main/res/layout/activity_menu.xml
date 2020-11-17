@@ -15,7 +15,7 @@
         android:layout_height="wrap_content"
         android:fontFamily="@font/bungee_shade"
         android:gravity="center"
-        android:text="SELECT GAME"
+        android:text="@string/select_game"
         android:textColor="#3f51b5"
         android:textSize="40sp" />
 
@@ -28,6 +28,7 @@
         android:layout_marginEnd="20dp"
         app:cardCornerRadius="2dp"
         app:cardElevation="6dp"
+        app:cardBackgroundColor="@color/dark_gray"
         app:cardUseCompatPadding="true">
 
         <LinearLayout
@@ -48,7 +49,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/arka_solid"
-                android:text="Drinking Roulette"
+                android:textColor="@color/white"
+                android:text="@string/drinking_roulette"
                 android:textSize="20sp" />
         </LinearLayout>
     </androidx.cardview.widget.CardView>
@@ -56,6 +58,7 @@
     <androidx.cardview.widget.CardView
         android:id="@+id/btn_never_have_i_ever"
         android:layout_width="match_parent"
+        app:cardBackgroundColor="@color/dark_gray"
         android:layout_height="100dp"
         android:layout_marginTop="20dp"
         android:layout_marginStart="20dp"
@@ -76,14 +79,14 @@
                 android:layout_height="match_parent"
                 android:layout_marginTop="8dp"
                 android:layout_marginBottom="8dp"
-                android:src="@drawable/ic_party_fun" />
+                android:src="@drawable/ic_never_menu" />
 
             <TextView
-
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/arka_solid"
-                android:text="Never have I ever"
+                android:textColor="@color/white"
+                android:text="@string/never_have_i_ever_menu"
                 android:textSize="20sp" />
         </LinearLayout>
     </androidx.cardview.widget.CardView>

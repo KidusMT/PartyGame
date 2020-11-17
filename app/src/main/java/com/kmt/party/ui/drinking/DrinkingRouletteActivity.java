@@ -8,11 +8,14 @@ import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 
 import com.kmt.luckwheel.LuckyWheel;
 import com.kmt.luckwheel.WheelItem;
 import com.kmt.party.R;
 import com.kmt.party.ui.base.BaseActivity;
+import com.kmt.party.ui.never.NeverActivity;
+import com.kmt.party.ui.settings.SettingsActivity;
 import com.kmt.party.utils.RouletteColor;
 
 import java.util.ArrayList;
@@ -22,6 +25,7 @@ import javax.inject.Inject;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import butterknife.OnClick;
 
 public class DrinkingRouletteActivity extends BaseActivity implements DrinkingRouletteMvpView {
 
@@ -58,6 +62,20 @@ public class DrinkingRouletteActivity extends BaseActivity implements DrinkingRo
     protected void onDestroy() {
         mPresenter.onDetach();
         super.onDestroy();
+    }
+
+    @OnClick(R.id.btn_instruction)
+    void onInstructionClicked() {
+        // open settings screen
+        // 1) change language
+        // 2) instruction of the game
+        startActivity(SettingsActivity.getStartIntent(DrinkingRouletteActivity.this));
+    }
+
+    @OnClick(R.id.btn_back)
+    public void OnClickBack(View view) {
+        onBackPressed();
+        finish();
     }
 
     @Override
