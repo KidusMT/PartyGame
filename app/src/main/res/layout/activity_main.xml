@@ -191,12 +191,26 @@
         </LinearLayout>
     </LinearLayout>
 
-
-    <com.mindorks.placeholderview.SwipePlaceHolderView
-        android:id="@+id/cards_container"
+    <RelativeLayout
+        android:layout_below="@id/top_container"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/top_container" />
+        android:layout_height="match_parent">
+        <com.mindorks.placeholderview.SwipePlaceHolderView
+            android:id="@+id/cards_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/tv_no_content"
+            android:textSize="30sp"
+            android:fontFamily="sans-serif-light"
+            android:layout_centerInParent="true"
+            android:textAlignment="center"
+            android:text="@string/please_select_card_ntype_to_start_playing"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+    </RelativeLayout>
+
 
 </RelativeLayout>
 

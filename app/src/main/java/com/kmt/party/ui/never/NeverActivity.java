@@ -12,6 +12,7 @@ import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.ScaleAnimation;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.kmt.party.R;
 import com.kmt.party.data.model.Question;
@@ -50,6 +51,8 @@ public class NeverActivity extends BaseActivity implements NeverMvpView {
     @BindView(R.id.btn_party_selected)
     ImageView btnSelectedParty;
 
+    @BindView(R.id.tv_no_content)
+    TextView tvNoContent;
     public static Intent getStartIntent(Context context) {
         return new Intent(context, NeverActivity.class);
     }
@@ -92,20 +95,20 @@ public class NeverActivity extends BaseActivity implements NeverMvpView {
     void onPartyClick() {
         hideSelectionBtns();
         btnSelectedParty.setVisibility(View.VISIBLE);
-        mPresenter.onPartyClicked();
+        mPresenter.onPartyClicked(NeverActivity.this);
     }
 
     @OnClick(R.id.btn_dirty)
     void onDirtyClick() {
         hideSelectionBtns();
         btnSelectedDirty.setVisibility(View.VISIBLE);
-        mPresenter.onDirtyClicked();
+        mPresenter.onDirtyClicked(NeverActivity.this);
     }
 
     @OnClick(R.id.btn_fun)
     void onFunClick() {
         hideSelectionBtns();
-        mPresenter.onFunnyClicked();
+        mPresenter.onFunnyClicked(NeverActivity.this);
         btnSelectedFun.setVisibility(View.VISIBLE);
     }
 
@@ -113,6 +116,7 @@ public class NeverActivity extends BaseActivity implements NeverMvpView {
         btnSelectedDirty.setVisibility(View.GONE);
         btnSelectedFun.setVisibility(View.GONE);
         btnSelectedParty.setVisibility(View.GONE);
+        tvNoContent.setVisibility(View.GONE);
     }
 
     @OnClick(R.id.btn_back)
@@ -124,8 +128,9 @@ public class NeverActivity extends BaseActivity implements NeverMvpView {
     @Override
     protected void setUp() {
         setupCardContainerView();
-        mPresenter.onCardExhausted();
+        mPresenter.onCardExhausted(NeverActivity.this);
         hideSelectionBtns();
+        tvNoContent.setVisibility(View.VISIBLE);
     }
 
     @Override
@@ -158,7 +163,7 @@ public class NeverActivity extends BaseActivity implements NeverMvpView {
             if (count == 0) {
                 // reload the contents again after 1 sec delay
                 new Handler(getMainLooper()).postDelayed(() ->
-                        mPresenter.onCardExhausted(), 400);
+                        mPresenter.onCardExhausted(NeverActivity.this), 400);
             }
         });
     }

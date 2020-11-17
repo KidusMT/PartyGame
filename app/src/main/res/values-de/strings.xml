@@ -118,4 +118,5 @@
     <string name="fun">Spaß</string>
     <string name="party">Party</string>
     <string name="settings">die Einstellungen</string>
+    <string name="please_select_card_ntype_to_start_playing">Bitte wählen Sie den Kartentyp, um mit dem Spielen zu beginnen.</string>
 </resources>

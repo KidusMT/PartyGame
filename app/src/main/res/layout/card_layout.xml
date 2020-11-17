@@ -33,7 +33,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
                 <TextView
-                    android:text="Never Have I ever"
+                    android:text="@string/never_have_i_ever_menu"
                     android:textAlignment="center"
                     android:fontFamily="@font/architects_daughter_regular"
                     android:textColor="@color/white"
@@ -75,7 +75,6 @@
                         android:layout_gravity="center"
                         android:fontFamily="@font/architects_daughter_regular"
                         android:gravity="center"
-                        android:text="@string/app_name"
                         android:textColor="@color/white"
                         android:textSize="30sp" />
                 </LinearLayout>
