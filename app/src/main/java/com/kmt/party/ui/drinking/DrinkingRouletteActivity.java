@@ -14,6 +14,7 @@ import com.kmt.luckwheel.LuckyWheel;
 import com.kmt.luckwheel.WheelItem;
 import com.kmt.party.R;
 import com.kmt.party.ui.base.BaseActivity;
+import com.kmt.party.ui.menu.MenuActivity;
 import com.kmt.party.ui.never.NeverActivity;
 import com.kmt.party.ui.settings.SettingsActivity;
 import com.kmt.party.utils.RouletteColor;
@@ -28,6 +29,7 @@ import butterknife.ButterKnife;
 import butterknife.OnClick;
 
 public class DrinkingRouletteActivity extends BaseActivity implements DrinkingRouletteMvpView {
+    public static final String TAG = DrinkingRouletteActivity.class.getSimpleName();
 
     @Inject
     DrinkingRouletteMvpPresenter<DrinkingRouletteMvpView> mPresenter;
@@ -55,7 +57,7 @@ public class DrinkingRouletteActivity extends BaseActivity implements DrinkingRo
 
     @Override
     public void onBackPressed() {
-        super.onBackPressed();
+        startActivity(new Intent(DrinkingRouletteActivity.this, MenuActivity.class));
     }
 
     @Override
@@ -69,7 +71,7 @@ public class DrinkingRouletteActivity extends BaseActivity implements DrinkingRo
         // open settings screen
         // 1) change language
         // 2) instruction of the game
-        startActivity(SettingsActivity.getStartIntent(DrinkingRouletteActivity.this));
+        startActivity(SettingsActivity.getStartIntent(DrinkingRouletteActivity.this, NeverActivity.TAG));
     }
 
     @OnClick(R.id.btn_back)

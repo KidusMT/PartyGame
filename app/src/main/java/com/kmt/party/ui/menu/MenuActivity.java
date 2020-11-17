@@ -15,7 +15,7 @@ import butterknife.ButterKnife;
 import butterknife.OnClick;
 
 public class MenuActivity extends BaseActivity implements MenuMvpView {
-
+    public static final String TAG = MenuActivity.class.getSimpleName();
     @Inject
     MenuMvpPresenter<MenuMvpView> mPresenter;
 

@@ -114,4 +114,8 @@
     <string name="lang_french">フランス語</string>
     <string name="lang_japanese">日本人</string>
     <string name="available_language">利用可能な言語</string>
+    <string name="dirty">汚れた</string>
+    <string name="fun">楽しい</string>
+    <string name="party">パーティー</string>
+    <string name="settings">設定</string>
 </resources>

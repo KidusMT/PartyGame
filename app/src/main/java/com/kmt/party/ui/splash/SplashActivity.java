@@ -8,11 +8,13 @@ import androidx.annotation.Nullable;
 import com.kmt.party.R;
 import com.kmt.party.ui.base.BaseActivity;
 import com.kmt.party.ui.menu.MenuActivity;
+import com.kmt.party.ui.settings.SettingsActivity;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
 public class SplashActivity extends BaseActivity {
+    public static final String TAG = SplashActivity.class.getSimpleName();
 
     @BindView(R.id.textView41)
     TextView tvWelcome;

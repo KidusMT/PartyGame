@@ -4,14 +4,10 @@
     <!--          https://asrt.gluege.boerde.de             -->
     <string name="app_name">Party Game</string>
 
-
-    <string name="some_error">Some Error Occurred!</string>
-    <string name="music">Opção de música</string>
-    <string name="party">Party</string>
+    <string name="party">Festa</string>
     <string name="fun">Fun</string>
     <string name="dirty">Sujo</string>
-    <string name="never_have_i_ever">Nunca \nnunca ...</string>
-    <string name="settings">Settings</string>
+    <string name="settings">Definições</string>
 
     <string name="available_language">Idiomas disponíveis</string>
 

@@ -4,12 +4,9 @@
     <string name="app_name">Party Game</string>
 
 
-    <string name="some_error">Some Error Occurred!</string>
-    <string name="music">Вариант музыки</string>
-    <string name="party">Party</string>
+    <string name="party">Партия</string>
     <string name="fun">Fun</string>
     <string name="dirty">Dirty</string>
-    <string name="never_have_i_ever">Никогда не \nЯ никогда ...</string>
     <string name="settings">Настройки</string>
 
     <string name="available_language">Доступные языки</string>

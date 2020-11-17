@@ -13,6 +13,7 @@ import androidx.annotation.NonNull;
 
 import com.kmt.party.R;
 import com.kmt.party.ui.base.BaseActivity;
+import com.kmt.party.ui.drinking.DrinkingRouletteActivity;
 import com.kmt.party.utils.AppConstants;
 import com.kmt.party.utils.AppLogger;
 
@@ -24,6 +25,7 @@ import butterknife.OnClick;
 import static com.kmt.party.data.prefs.AppPreferencesHelper.PREF_KEY_CURRENT_LANGUAGE;
 
 public class LanguageListActivity extends BaseActivity implements View.OnClickListener {
+    public static final String TAG = LanguageListActivity.class.getSimpleName();
 
     RadioButton mRadioButton_russian, mRadioButton_english, mRadioButton_spanish, mRadioButton_portugal,
             mRadioButton_german, mRadioButton_french, mRadioButton_japanese;
@@ -120,7 +122,7 @@ public class LanguageListActivity extends BaseActivity implements View.OnClickLi
 
             case R.id.check_english:
             case R.id.check_english_container:
-                Locale locale = new Locale("en");
+                Locale locale = new Locale(getString(R.string.lang_english_abbr));
                 Locale.setDefault(locale);
                 Configuration config = new Configuration(getResources().getConfiguration());
                 if (Build.VERSION.SDK_INT >= 17) {
@@ -130,23 +132,22 @@ public class LanguageListActivity extends BaseActivity implements View.OnClickLi
                 }
                 getResources().updateConfiguration(config, getResources().getDisplayMetrics());
 
-                sharedPreferences.edit().putString("PREF_KEY_CURRENT_LANGUAGE", "en").apply();
-                setLanguageButtonActive("en");
+                sharedPreferences.edit().putString(PREF_KEY_CURRENT_LANGUAGE, getString(R.string.lang_english_abbr)).apply();
+                setLanguageButtonActive(getString(R.string.lang_english_abbr));
                 try {
                     Thread.sleep(650);
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
-                Intent intent = new Intent(this, LanguageListActivity.class);
-                startActivity(intent);
                 onConfigurationChanged(config);
+                reload();
                 finish();
 
                 break;
             case R.id.check_russian:
             case R.id.check_russian_container:
 
-                Locale localeRu = new Locale("ru");
+                Locale localeRu = new Locale(getString(R.string.lang_russian_abbr));
                 Locale.setDefault(localeRu);
                 Configuration configRu = new Configuration(getResources().getConfiguration());
                 if (Build.VERSION.SDK_INT >= 17) {
@@ -156,23 +157,22 @@ public class LanguageListActivity extends BaseActivity implements View.OnClickLi
                 }
                 getResources().updateConfiguration(configRu, getResources().getDisplayMetrics());
 
-                sharedPreferences.edit().putString(PREF_KEY_CURRENT_LANGUAGE, "ru").apply();
-                setLanguageButtonActive("ru");
+                sharedPreferences.edit().putString(PREF_KEY_CURRENT_LANGUAGE, getString(R.string.lang_russian_abbr)).apply();
+                setLanguageButtonActive(getString(R.string.lang_russian_abbr));
                 try {
                     Thread.sleep(650);
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
-                Intent intent1 = new Intent(this, LanguageListActivity.class);
-                startActivity(intent1);
                 onConfigurationChanged(configRu);
+                reload();
                 finish();
 
                 break;
             case R.id.check_spanish:
             case R.id.check_spanish_container:
 
-                Locale localeEs = new Locale("es");
+                Locale localeEs = new Locale(getString(R.string.lang_spanish_abbr));
                 Locale.setDefault(localeEs);
                 Configuration configEs = new Configuration(getResources().getConfiguration());
                 if (Build.VERSION.SDK_INT >= 17) {
@@ -182,22 +182,22 @@ public class LanguageListActivity extends BaseActivity implements View.OnClickLi
                 }
                 getResources().updateConfiguration(configEs, getResources().getDisplayMetrics());
 
-                sharedPreferences.edit().putString(PREF_KEY_CURRENT_LANGUAGE, "es").apply();
-                setLanguageButtonActive("es");
+                sharedPreferences.edit().putString(PREF_KEY_CURRENT_LANGUAGE, getString(R.string.lang_spanish_abbr)).apply();
+                setLanguageButtonActive(getString(R.string.lang_spanish_abbr));
                 try {
                     Thread.sleep(650);
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
-                startActivity(new Intent(this, LanguageListActivity.class));
                 onConfigurationChanged(configEs);
+                reload();
                 finish();
 
                 break;
             case R.id.check_portuguese:
             case R.id.check_portuguese_container:
 
-                Locale localePt = new Locale("pt");
+                Locale localePt = new Locale(getString(R.string.lang_portuguese_abbr));
                 Locale.setDefault(localePt);
                 Configuration configPt = new Configuration(getResources().getConfiguration());
                 if (Build.VERSION.SDK_INT >= 17) {
@@ -207,22 +207,22 @@ public class LanguageListActivity extends BaseActivity implements View.OnClickLi
                 }
                 getResources().updateConfiguration(configPt, getResources().getDisplayMetrics());
 
-                sharedPreferences.edit().putString(PREF_KEY_CURRENT_LANGUAGE, "pt").apply();
-                setLanguageButtonActive("pt");
+                sharedPreferences.edit().putString(PREF_KEY_CURRENT_LANGUAGE, getString(R.string.lang_portuguese_abbr)).apply();
+                setLanguageButtonActive(getString(R.string.lang_portuguese_abbr));
                 try {
                     Thread.sleep(650);
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
-                startActivity(new Intent(this, LanguageListActivity.class));
                 onConfigurationChanged(configPt);
+                reload();
                 finish();
 
                 break;
             case R.id.check_german:
             case R.id.check_german_container:
 
-                Locale localeDe = new Locale("de");
+                Locale localeDe = new Locale(getString(R.string.lang_german_abbr));
                 Locale.setDefault(localeDe);
                 Configuration configDe = new Configuration(getResources().getConfiguration());
                 if (Build.VERSION.SDK_INT >= 17) {
@@ -232,22 +232,22 @@ public class LanguageListActivity extends BaseActivity implements View.OnClickLi
                 }
                 getResources().updateConfiguration(configDe, getResources().getDisplayMetrics());
 
-                sharedPreferences.edit().putString(PREF_KEY_CURRENT_LANGUAGE, "de").apply();
-                setLanguageButtonActive("de");
+                sharedPreferences.edit().putString(PREF_KEY_CURRENT_LANGUAGE, getString(R.string.lang_german_abbr)).apply();
+                setLanguageButtonActive(getString(R.string.lang_german_abbr));
                 try {
                     Thread.sleep(650);
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
-                startActivity(new Intent(this, LanguageListActivity.class));
                 onConfigurationChanged(configDe);
+                reload();
                 finish();
 
                 break;
             case R.id.check_french:
             case R.id.check_french_container:
 
-                Locale localeFr = new Locale("fr");
+                Locale localeFr = new Locale(getString(R.string.lang_french_abbr));
                 Locale.setDefault(localeFr);
                 Configuration configFr = new Configuration(getResources().getConfiguration());
                 if (Build.VERSION.SDK_INT >= 17) {
@@ -257,22 +257,22 @@ public class LanguageListActivity extends BaseActivity implements View.OnClickLi
                 }
                 getResources().updateConfiguration(configFr, getResources().getDisplayMetrics());
 
-                sharedPreferences.edit().putString(PREF_KEY_CURRENT_LANGUAGE, "fr").apply();
-                setLanguageButtonActive("fr");
+                sharedPreferences.edit().putString(PREF_KEY_CURRENT_LANGUAGE, getString(R.string.lang_french_abbr)).apply();
+                setLanguageButtonActive(getString(R.string.lang_french_abbr));
                 try {
                     Thread.sleep(650);
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
-                startActivity(new Intent(this, LanguageListActivity.class));
                 onConfigurationChanged(configFr);
+                reload();
                 finish();
 
                 break;
             case R.id.check_japanese:
             case R.id.check_japanese_container:
 
-                Locale localeJa = new Locale("ja");
+                Locale localeJa = new Locale(getString(R.string.lang_japanese_abbr));
                 Locale.setDefault(localeJa);
                 Configuration configJa = new Configuration(getResources().getConfiguration());
                 if (Build.VERSION.SDK_INT >= 17) {
@@ -282,19 +282,31 @@ public class LanguageListActivity extends BaseActivity implements View.OnClickLi
                 }
                 getResources().updateConfiguration(configJa, getResources().getDisplayMetrics());
 
-                sharedPreferences.edit().putString(PREF_KEY_CURRENT_LANGUAGE, "ja").apply();
-                setLanguageButtonActive("ja");
+                sharedPreferences.edit().putString(PREF_KEY_CURRENT_LANGUAGE, getString(R.string.lang_japanese_abbr)).apply();
+                setLanguageButtonActive(getString(R.string.lang_japanese_abbr));
                 try {
                     Thread.sleep(650);
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
-                startActivity(new Intent(this, LanguageListActivity.class));
                 onConfigurationChanged(configJa);
+                reload();
                 finish();
 
                 break;
+
+
         }
+    }
+
+    public void reload() {
+        Intent intent = getIntent();
+        overridePendingTransition(0, 0);
+        intent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
+        finish();
+
+        overridePendingTransition(0, 0);
+        startActivity(intent);
     }
 
     @Override

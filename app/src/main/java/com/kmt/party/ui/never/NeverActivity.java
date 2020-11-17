@@ -16,6 +16,8 @@ import android.widget.ImageView;
 import com.kmt.party.R;
 import com.kmt.party.data.model.Question;
 import com.kmt.party.ui.base.BaseActivity;
+import com.kmt.party.ui.drinking.DrinkingRouletteActivity;
+import com.kmt.party.ui.menu.MenuActivity;
 import com.kmt.party.ui.settings.SettingsActivity;
 import com.kmt.party.utils.ScreenUtils;
 import com.mindorks.placeholderview.SwipeDecor;
@@ -31,6 +33,8 @@ import butterknife.ButterKnife;
 import butterknife.OnClick;
 
 public class NeverActivity extends BaseActivity implements NeverMvpView {
+
+    public static final String TAG = NeverActivity.class.getSimpleName();
 
     @Inject
     NeverMvpPresenter<NeverMvpView> mPresenter;
@@ -55,7 +59,8 @@ public class NeverActivity extends BaseActivity implements NeverMvpView {
         // open settings screen
         // 1) change language
         // 2) instruction of the game
-        startActivity(SettingsActivity.getStartIntent(NeverActivity.this));
+        startActivity(SettingsActivity.getStartIntent(NeverActivity.this, NeverActivity.TAG));
+        finish();
     }
 
     @Override
@@ -74,7 +79,7 @@ public class NeverActivity extends BaseActivity implements NeverMvpView {
 
     @Override
     public void onBackPressed() {
-        super.onBackPressed();
+        startActivity(new Intent(NeverActivity.this, MenuActivity.class));
     }
 
     @Override

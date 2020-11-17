@@ -1,6 +1,5 @@
 package com.kmt.party.ui.settings;
 
-import android.Manifest;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
@@ -9,6 +8,7 @@ import android.widget.TextView;
 
 import com.kmt.party.R;
 import com.kmt.party.ui.base.BaseActivity;
+import com.kmt.party.ui.drinking.DrinkingRouletteActivity;
 import com.kmt.party.ui.never.NeverActivity;
 
 import javax.inject.Inject;
@@ -18,14 +18,15 @@ import butterknife.ButterKnife;
 import butterknife.OnClick;
 
 public class SettingsActivity extends BaseActivity implements SettingsMvpView {
-
+    public static final String TAG = SettingsActivity.class.getSimpleName();
+    public static String fromScreen = NeverActivity.TAG;
     @Inject
     SettingsMvpPresenter<SettingsMvpView> mPresenter;
-
     @BindView(R.id.lbl_current_language)
     TextView mCurrentLanguage;
 
-    public static Intent getStartIntent(Context context) {
+    public static Intent getStartIntent(Context context, String from) {
+        fromScreen = from;
         return new Intent(context, SettingsActivity.class);
     }
 
@@ -97,7 +98,9 @@ public class SettingsActivity extends BaseActivity implements SettingsMvpView {
 
     @Override
     public void onBackPressed() {
-        startActivity(new Intent(SettingsActivity.this, NeverActivity.class));
+        if (fromScreen.equals(NeverActivity.TAG))
+            startActivity(new Intent(SettingsActivity.this, NeverActivity.class));
+        else startActivity(new Intent(SettingsActivity.this, DrinkingRouletteActivity.class));
     }
 
 }

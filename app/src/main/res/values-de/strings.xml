@@ -114,4 +114,8 @@
     <string name="lang_spanish">Spanisch</string>
     <string name="lang_russian">Russisch</string>
     <string name="lang_portuguese">Portugiesisch</string>
+    <string name="dirty">Schmutzig</string>
+    <string name="fun">Spaß</string>
+    <string name="party">Party</string>
+    <string name="settings">die Einstellungen</string>
 </resources>

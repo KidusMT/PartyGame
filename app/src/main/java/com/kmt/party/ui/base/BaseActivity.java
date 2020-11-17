@@ -2,6 +2,7 @@ package com.kmt.party.ui.base;
 
 import android.annotation.TargetApi;
 import android.content.Context;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.content.res.Configuration;
 import android.content.res.Resources;
@@ -104,8 +105,8 @@ public abstract class BaseActivity extends AppCompatActivity
     public void showMessage(String message) {
         if (message != null) {
             Toast.makeText(this, message, Toast.LENGTH_SHORT).show();
-        } else {
-            Toast.makeText(this, getString(R.string.some_error), Toast.LENGTH_SHORT).show();
+//        } else {
+//            Toast.makeText(this, getString(R.string.some_error), Toast.LENGTH_SHORT).show();
         }
     }
 
