@@ -111,7 +111,7 @@
                 android:background="@color/separator" />
 
             <LinearLayout
-                android:id="@+id/btn_settings_game_instruction"
+                android:id="@+id/btn_settings_never_instruction"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/vertical_margin_8"
@@ -121,7 +121,34 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/instruction" />
+                    android:text="@string/never_have_i_ever_menu" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/how_to_play_the_game"
+                    android:textColor="@color/colorPrimary" />
+
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/separator" />
+
+            <LinearLayout
+                android:id="@+id/btn_settings_drinking_instruction"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/vertical_margin_8"
+                android:layout_marginBottom="@dimen/activity_vertical_margin"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/drinking_roulette" />
 
                 <TextView
                     android:layout_width="wrap_content"
