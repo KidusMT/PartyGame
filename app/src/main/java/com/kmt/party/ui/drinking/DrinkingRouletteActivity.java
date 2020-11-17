@@ -3,17 +3,17 @@ package com.kmt.party.ui.drinking;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.BitmapFactory;
-import android.graphics.Color;
 import android.graphics.drawable.Animatable;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 
-import com.bluehomestudio.luckywheel.LuckyWheel;
-import com.bluehomestudio.luckywheel.WheelItem;
+import com.kmt.luckwheel.LuckyWheel;
+import com.kmt.luckwheel.WheelItem;
 import com.kmt.party.R;
 import com.kmt.party.ui.base.BaseActivity;
+import com.kmt.party.utils.RouletteColor;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -63,27 +63,15 @@ public class DrinkingRouletteActivity extends BaseActivity implements DrinkingRo
     @Override
     protected void setUp() {
         List<WheelItem> wheelItems = new ArrayList<>();
-        wheelItems.add(new WheelItem(Color.BLUE,
-                BitmapFactory.decodeResource(getResources(), R.drawable.ic_action_name), "Bezos"));
-
-        wheelItems.add(new WheelItem(Color.CYAN,
-                BitmapFactory.decodeResource(getResources(), R.drawable.ic_action_name), "Gates"));
-
-        wheelItems.add(new WheelItem(Color.MAGENTA,
-                BitmapFactory.decodeResource(getResources(), R.drawable.ic_action_name), "Arnault"));
-
-        wheelItems.add(new WheelItem(Color.RED,
-                BitmapFactory.decodeResource(getResources(), R.drawable.ic_action_name), "Buffett"));
-
-        wheelItems.add(new WheelItem(Color.YELLOW,
-                BitmapFactory.decodeResource(getResources(), R.drawable.ic_action_name), "Ellison"));
-
-        wheelItems.add(new WheelItem(Color.LTGRAY,
-                BitmapFactory.decodeResource(getResources(), R.drawable.ic_action_name), "Ortega"));
+        wheelItems.add(new WheelItem(RouletteColor.ONE, "Bezos"));
+        wheelItems.add(new WheelItem(RouletteColor.TWO, "Gates"));
+        wheelItems.add(new WheelItem(RouletteColor.ONE, "Arnault"));
+        wheelItems.add(new WheelItem(RouletteColor.TWO, "Buffett"));
+        wheelItems.add(new WheelItem(RouletteColor.ONE, "Ellison"));
+        wheelItems.add(new WheelItem(RouletteColor.TWO, "Ortega"));
 
         luckyWheel.addWheelItems(wheelItems);
         luckyWheel.setTarget(3);
-        luckyWheel.rotateWheelTo(2);
         luckyWheel.setLuckyWheelReachTheTarget(() -> {
 
         });

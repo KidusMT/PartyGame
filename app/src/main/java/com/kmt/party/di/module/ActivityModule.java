@@ -17,6 +17,9 @@ import com.kmt.party.ui.never.NeverPresenter;
 import com.kmt.party.ui.menu.MenuMvpPresenter;
 import com.kmt.party.ui.menu.MenuMvpView;
 import com.kmt.party.ui.menu.MenuPresenter;
+import com.kmt.party.ui.settings.SettingsMvpPresenter;
+import com.kmt.party.ui.settings.SettingsMvpView;
+import com.kmt.party.ui.settings.SettingsPresenter;
 import com.kmt.party.utils.rx.AppSchedulerProvider;
 import com.kmt.party.utils.rx.SchedulerProvider;
 
@@ -72,6 +75,13 @@ public class ActivityModule {
     @PerActivity
     DrinkingRouletteMvpPresenter<DrinkingRouletteMvpView> provideDrinkingRoulettePresenter(
             DrinkingRoulettePresenter<DrinkingRouletteMvpView> presenter) {
+        return presenter;
+    }
+
+    @Provides
+    @PerActivity
+    SettingsMvpPresenter<SettingsMvpView> provideSettingsPresenter(
+            SettingsPresenter<SettingsMvpView> presenter) {
         return presenter;
     }
 

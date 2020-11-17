@@ -45,6 +45,7 @@ android {
 
 //noinspection SpellCheckingInspection
 dependencies {
+    implementation project(path: ':app:luckWheel')
     implementation fileTree(include: ['*.jar'], dir: 'libs')
 
     // AndroidX libraries
@@ -60,7 +61,7 @@ dependencies {
 
     // WheelView
 //    implementation 'com.github.lukedeighton:wheelview:0.4.2'
-    implementation 'com.github.mmoamenn:LuckyWheel_Android:0.3.0'
+//    implementation 'com.github.mmoamenn:LuckyWheel_Android:0.3.0'
 
     // circular image view
     implementation 'com.mikhaellopez:circularimageview:4.2.0'

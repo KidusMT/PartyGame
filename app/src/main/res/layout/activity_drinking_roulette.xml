@@ -8,12 +8,12 @@
     android:fitsSystemWindows="true">
 
 
-    <com.bluehomestudio.luckywheel.LuckyWheel
+    <com.kmt.luckwheel.LuckyWheel
         android:id="@+id/lwv"
         android:layout_width="300dp"
         android:layout_height="300dp"
         android:layout_centerInParent="true"
-        app:arrow_image="@drawable/ic_selection_arrow"
+        app:arrow_image="@drawable/arrow"
         LuckyWheel:background_color="@color/mater_grey_400" />
 
 

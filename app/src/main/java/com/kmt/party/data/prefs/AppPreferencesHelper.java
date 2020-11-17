@@ -11,7 +11,6 @@ import javax.inject.Singleton;
 
 @Singleton
 public class AppPreferencesHelper implements PreferencesHelper {
-
     public static final String PREF_KEY_CURRENT_LANGUAGE = "PREF_KEY_CURRENT_LANGUAGE";
     private final SharedPreferences mPrefs;
 

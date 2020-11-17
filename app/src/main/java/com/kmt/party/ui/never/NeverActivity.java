@@ -16,6 +16,7 @@ import android.widget.ImageView;
 import com.kmt.party.R;
 import com.kmt.party.data.model.Question;
 import com.kmt.party.ui.base.BaseActivity;
+import com.kmt.party.ui.settings.SettingsActivity;
 import com.kmt.party.utils.ScreenUtils;
 import com.mindorks.placeholderview.SwipeDecor;
 import com.mindorks.placeholderview.SwipePlaceHolderView;
@@ -34,7 +35,7 @@ public class NeverActivity extends BaseActivity implements NeverMvpView {
     @Inject
     NeverMvpPresenter<NeverMvpView> mPresenter;
 
-//    @BindView(R.id.lwv)
+    //    @BindView(R.id.lwv)
 //    LuckyWheel luckyWheel;
     @BindView(R.id.cards_container)
     SwipePlaceHolderView mCardsContainerView;
@@ -44,14 +45,17 @@ public class NeverActivity extends BaseActivity implements NeverMvpView {
     ImageView btnSelectedFun;
     @BindView(R.id.btn_party_selected)
     ImageView btnSelectedParty;
-    @OnClick(R.id.btn_instruction)
-    void onInstructionClicked(){
-        showMessage("instruction clicked");
-    }
-
 
     public static Intent getStartIntent(Context context) {
         return new Intent(context, NeverActivity.class);
+    }
+
+    @OnClick(R.id.btn_instruction)
+    void onInstructionClicked() {
+        // open settings screen
+        // 1) change language
+        // 2) instruction of the game
+        startActivity(SettingsActivity.getStartIntent(NeverActivity.this));
     }
 
     @Override
@@ -80,31 +84,32 @@ public class NeverActivity extends BaseActivity implements NeverMvpView {
     }
 
     @OnClick(R.id.btn_party)
-    void onPartyClick(){
+    void onPartyClick() {
         hideSelectionBtns();
         btnSelectedParty.setVisibility(View.VISIBLE);
         mPresenter.onPartyClicked();
     }
 
     @OnClick(R.id.btn_dirty)
-    void onDirtyClick(){
+    void onDirtyClick() {
         hideSelectionBtns();
         btnSelectedDirty.setVisibility(View.VISIBLE);
         mPresenter.onDirtyClicked();
     }
 
     @OnClick(R.id.btn_fun)
-    void onFunClick(){
+    void onFunClick() {
         hideSelectionBtns();
         mPresenter.onFunnyClicked();
         btnSelectedFun.setVisibility(View.VISIBLE);
     }
 
-    private void hideSelectionBtns(){
+    private void hideSelectionBtns() {
         btnSelectedDirty.setVisibility(View.GONE);
         btnSelectedFun.setVisibility(View.GONE);
         btnSelectedParty.setVisibility(View.GONE);
     }
+
     @Override
     protected void setUp() {
         setupCardContainerView();
