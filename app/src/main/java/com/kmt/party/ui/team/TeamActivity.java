@@ -36,8 +36,13 @@ public class TeamActivity extends BaseActivity implements TeamMvpView, TeamCommu
     TeamAdapter mAdapter;
     @BindView(R.id.tv_no_player)
     TextView mNoAssignedTask;
-    ArrayList<Player> playerArrayList = new ArrayList<>();
+    public static ArrayList<Player> playerArrayList = new ArrayList<>();
     public static Intent getStartIntent(Context context) {
+        return new Intent(context, TeamActivity.class);
+    }
+
+    public static Intent getStartIntent(Context context, ArrayList<Player> list) {
+        playerArrayList = list;
         return new Intent(context, TeamActivity.class);
     }
 
@@ -59,12 +64,12 @@ public class TeamActivity extends BaseActivity implements TeamMvpView, TeamCommu
     @Override
     public void onBackPressed() {
         startActivity(new Intent(TeamActivity.this, MenuActivity.class));
+        finish();
     }
 
     @OnClick(R.id.btn_back)
     public void OnClickBack(View view) {
         onBackPressed();
-        finish();
     }
 
     @Override
@@ -83,6 +88,7 @@ public class TeamActivity extends BaseActivity implements TeamMvpView, TeamCommu
         if (players!=null & players.size()>0){
             mRecyclerView.setVisibility(View.VISIBLE);
             mNoAssignedTask.setVisibility(View.GONE);
+            mAdapter.addItems(players);
         }else{
             mNoAssignedTask.setVisibility(View.VISIBLE);
             mRecyclerView.setVisibility(View.GONE);
@@ -107,6 +113,8 @@ public class TeamActivity extends BaseActivity implements TeamMvpView, TeamCommu
                 showMessage(R.string.add_more_team);
             }else{
                 // can play
+                startActivity(DrinkingRouletteActivity.getStartIntent(TeamActivity.this, playerArrayList));
+                finish();
             }
         }else{
             showMessage(R.string.add_team);

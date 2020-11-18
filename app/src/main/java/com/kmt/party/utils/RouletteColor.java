@@ -9,4 +9,6 @@ public class RouletteColor extends Color {
     public static final int ONE = 0xFF833E7D;
     @ColorInt
     public static final int TWO = 0xFF7083A4;
+    @ColorInt
+    public static final int THREE = 0xFFDA2267;
 }

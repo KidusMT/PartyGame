@@ -57,10 +57,12 @@ public class MenuActivity extends BaseActivity implements MenuMvpView {
     @OnClick(R.id.btn_never_have_i_ever)
     void onNeverHaveIEverClick() {
         startActivity(NeverActivity.getStartIntent(this));
+        finish();
     }
 
     @OnClick(R.id.btn_drinking_roulette)
     void onDirtyRouletteClick() {
         startActivity(TeamActivity.getStartIntent(this));
+        finish();
     }
 }

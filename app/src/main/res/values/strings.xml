@@ -144,5 +144,21 @@
     <string name="dialog_title_add_player">Add Player</string>
     <string name="add_more_team">Please add more team players.</string>
     <string name="add_team">Please add team members to play the game.</string>
+    <string name="drink_roulette_q1">Who’s the most scandalous person you’ve had sex with?</string>
+    <string name="drink_roulette_q2">What’s the most embarrassing thing you’ve ever done while drunk?</string>
+    <string name="drink_roulette_q3">What’s the closest you’ve ever come to cheating?</string>
+    <string name="drink_roulette_q4">What’s the biggest age difference you’ve had between yourself and a sexual partner?</string>
+    <string name="drink_roulette_q5">What’s the #1 thing you would never want your parents to find out about you?</string>
+    <string name="drink_roulette_q6">What’s the most embarrassing thing you’ve ever been caught doing?</string>
+    <string name="drink_roulette_q7">What’s the most scandalous location you’ve had sex in?</string>
+    <string name="drink_roulette_q8">What’s your most outrageous sexual fantasy?</string>
+    <string name="drink_roulette_q9">What’s the biggest lie you’ve ever told a significant other?</string>
+    <string name="drink_roulette_q10">What’s the least amount of time you’ve known someone for before sleeping with them?</string>
+    <string name="drink_roulette_q11">What’s the kinkiest thing you’ve ever done?</string>
+    <string name="drink_roulette_q12">What’s your biggest turn-off?</string>
+    <string name="drink_roulette_q13">What’s something you’ve done while drunk that you would never do sober?</string>
+    <string name="drink_roulette_q14">If you had to sleep with one person in this room, who would it be?</string>
+    <string name="drink_roulette_q15">What’s the longest you’ve gone without showering?</string>
+    <string name="drink_roulette_q16">What’s the biggest secret that you’re keeping from everyone in this room?</string>
 
 </resources>

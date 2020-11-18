@@ -2,7 +2,6 @@ package com.kmt.party.ui.drinking;
 
 import android.content.Context;
 import android.content.Intent;
-import android.graphics.BitmapFactory;
 import android.graphics.drawable.Animatable;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
@@ -13,15 +12,20 @@ import android.view.View;
 import com.kmt.luckwheel.LuckyWheel;
 import com.kmt.luckwheel.WheelItem;
 import com.kmt.party.R;
+import com.kmt.party.data.model.Player;
+import com.kmt.party.data.model.Question;
 import com.kmt.party.ui.base.BaseActivity;
-import com.kmt.party.ui.menu.MenuActivity;
+import com.kmt.party.ui.drinking.dialog.DrinkingQuestionsDialog;
 import com.kmt.party.ui.never.NeverActivity;
 import com.kmt.party.ui.settings.SettingsActivity;
 import com.kmt.party.ui.team.TeamActivity;
+import com.kmt.party.ui.team.dialog.AddPlayerDialog;
 import com.kmt.party.utils.RouletteColor;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
+import java.util.Random;
 
 import javax.inject.Inject;
 
@@ -31,14 +35,15 @@ import butterknife.OnClick;
 
 public class DrinkingRouletteActivity extends BaseActivity implements DrinkingRouletteMvpView {
     public static final String TAG = DrinkingRouletteActivity.class.getSimpleName();
-
+    public static ArrayList<Player> players = new ArrayList<>();
+    ArrayList<Question> questionArrayList = new ArrayList<>();
     @Inject
     DrinkingRouletteMvpPresenter<DrinkingRouletteMvpView> mPresenter;
-
     @BindView(R.id.lwv)
     LuckyWheel luckyWheel;
 
-    public static Intent getStartIntent(Context context) {
+    public static Intent getStartIntent(Context context, ArrayList<Player> list) {
+        players = list;
         return new Intent(context, DrinkingRouletteActivity.class);
     }
 
@@ -58,7 +63,8 @@ public class DrinkingRouletteActivity extends BaseActivity implements DrinkingRo
 
     @Override
     public void onBackPressed() {
-        startActivity(new Intent(DrinkingRouletteActivity.this, TeamActivity.class));
+        startActivity(TeamActivity.getStartIntent(DrinkingRouletteActivity.this));
+        finish();
     }
 
     @Override
@@ -78,23 +84,40 @@ public class DrinkingRouletteActivity extends BaseActivity implements DrinkingRo
     @OnClick(R.id.btn_back)
     public void OnClickBack(View view) {
         onBackPressed();
-        finish();
     }
 
     @Override
     protected void setUp() {
-        List<WheelItem> wheelItems = new ArrayList<>();
-        wheelItems.add(new WheelItem(RouletteColor.ONE, "Bezos"));
-        wheelItems.add(new WheelItem(RouletteColor.TWO, "Gates"));
-        wheelItems.add(new WheelItem(RouletteColor.ONE, "Arnault"));
-        wheelItems.add(new WheelItem(RouletteColor.TWO, "Buffett"));
-        wheelItems.add(new WheelItem(RouletteColor.ONE, "Ellison"));
-        wheelItems.add(new WheelItem(RouletteColor.TWO, "Ortega"));
+        final int[] currentQuestion = {0};
+        mPresenter.setQuestions(DrinkingRouletteActivity.this);
+        List<WheelItem> wheelItems = new ArrayList<>(players.size());
+        int[] colors = {RouletteColor.ONE, RouletteColor.TWO, RouletteColor.THREE};
+        Collections.shuffle(players);
+        for (int i = 0; i < players.size(); i++) {
+            wheelItems.add(new WheelItem(colors[i % 3], players.get(i).getName()));
+        }
+        int[] randNum = new int[players.size()];
+        for (int i = 0; i < players.size(); i++) {
+            randNum[i] = i + 1;
+        }
+        Collections.shuffle(questionArrayList);
+        Question selectedQuestion = questionArrayList.get(0);//by default 1st item
+        for (int i = 0; i < questionArrayList.size(); i++) {
+            selectedQuestion = questionArrayList.get(i);
+        }
 
         luckyWheel.addWheelItems(wheelItems);
-        luckyWheel.setTarget(3);
+        Random rand = new Random();
+        final int[] targ = {randNum[rand.nextInt(1000) % (players.size() - 1)]};
+        luckyWheel.setTarget(targ[0]);
         luckyWheel.setLuckyWheelReachTheTarget(() -> {
-
+            DrinkingQuestionsDialog.newInstance(questionArrayList.get(currentQuestion[0]), players.get(targ[0] - 1)).show(getSupportFragmentManager(), AddPlayerDialog.TAG);
+//            showMessage(players.get(targ[0]-1).getName()+ " player selected");
+            targ[0] = randNum[rand.nextInt(1000) % (players.size() - 1)];
+            luckyWheel.setTarget(targ[0]);
+            currentQuestion[0]++;
+            if (currentQuestion[0] >= questionArrayList.size())
+                currentQuestion[0] = 0;// resetting when reached on last item
         });
     }
 
@@ -117,5 +140,10 @@ public class DrinkingRouletteActivity extends BaseActivity implements DrinkingRo
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public void populateCard(ArrayList<Question> questions) {
+        questionArrayList = questions;
     }
 }

@@ -11,6 +11,9 @@ import com.kmt.party.ui.base.MvpPresenter;
 import com.kmt.party.ui.drinking.DrinkingRouletteMvpPresenter;
 import com.kmt.party.ui.drinking.DrinkingRouletteMvpView;
 import com.kmt.party.ui.drinking.DrinkingRoulettePresenter;
+import com.kmt.party.ui.drinking.dialog.DrinkingQuestionsMvpPresenter;
+import com.kmt.party.ui.drinking.dialog.DrinkingQuestionsMvpView;
+import com.kmt.party.ui.drinking.dialog.DrinkingQuestionsPresenter;
 import com.kmt.party.ui.never.NeverMvpPresenter;
 import com.kmt.party.ui.never.NeverMvpView;
 import com.kmt.party.ui.never.NeverPresenter;
@@ -105,6 +108,13 @@ public class ActivityModule {
     @PerActivity
     AddPlayerMvpPresenter<AddPlayerMvpView> provideAddPlayerPresenter(
             AddPlayerPresenter<AddPlayerMvpView> presenter) {
+        return presenter;
+    }
+
+    @Provides
+    @PerActivity
+    DrinkingQuestionsMvpPresenter<DrinkingQuestionsMvpView> provideDrinkingQuestionsPresenter(
+            DrinkingQuestionsPresenter<DrinkingQuestionsMvpView> presenter) {
         return presenter;
     }
 
