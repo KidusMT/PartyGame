@@ -3,15 +3,20 @@ package com.kmt.party.ui.team;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.TextView;
 
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.kmt.party.R;
+import com.kmt.party.data.model.Player;
 import com.kmt.party.ui.base.BaseActivity;
 import com.kmt.party.ui.drinking.DrinkingRouletteActivity;
-import com.kmt.party.ui.never.NeverActivity;
+import com.kmt.party.ui.menu.MenuActivity;
+import com.kmt.party.ui.team.dialog.AddPlayerDialog;
+
+import java.util.ArrayList;
 
 import javax.inject.Inject;
 
@@ -19,7 +24,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
-public class TeamActivity extends BaseActivity implements TeamMvpView {
+public class TeamActivity extends BaseActivity implements TeamMvpView, TeamCommunicator, TeamAdapter.TeamCallback {
     public static final String TAG = TeamActivity.class.getSimpleName();
     @Inject
     TeamMvpPresenter<TeamMvpView> mPresenter;
@@ -31,6 +36,7 @@ public class TeamActivity extends BaseActivity implements TeamMvpView {
     TeamAdapter mAdapter;
     @BindView(R.id.tv_no_player)
     TextView mNoAssignedTask;
+    ArrayList<Player> playerArrayList = new ArrayList<>();
     public static Intent getStartIntent(Context context) {
         return new Intent(context, TeamActivity.class);
     }
@@ -45,13 +51,20 @@ public class TeamActivity extends BaseActivity implements TeamMvpView {
         setUnBinder(ButterKnife.bind(this));
 
         mPresenter.onAttach(this);
+        mAdapter.setTeamCallback(this);
 
         setUp();
     }
 
     @Override
     public void onBackPressed() {
-        super.onBackPressed();
+        startActivity(new Intent(TeamActivity.this, MenuActivity.class));
+    }
+
+    @OnClick(R.id.btn_back)
+    public void OnClickBack(View view) {
+        onBackPressed();
+        finish();
     }
 
     @Override
@@ -63,6 +76,17 @@ public class TeamActivity extends BaseActivity implements TeamMvpView {
     @Override
     protected void setUp() {
         setupTasksRecyclerView();
+        showPlayers(playerArrayList);
+    }
+
+    public void showPlayers(ArrayList<Player> players){
+        if (players!=null & players.size()>0){
+            mRecyclerView.setVisibility(View.VISIBLE);
+            mNoAssignedTask.setVisibility(View.GONE);
+        }else{
+            mNoAssignedTask.setVisibility(View.VISIBLE);
+            mRecyclerView.setVisibility(View.GONE);
+        }
     }
 
     private void setupTasksRecyclerView() {
@@ -70,13 +94,36 @@ public class TeamActivity extends BaseActivity implements TeamMvpView {
         mRecyclerView.setAdapter(mAdapter);
     }
 
-    @OnClick(R.id.btn_never_have_i_ever)
-    void onNeverHaveIEverClick() {
-        startActivity(NeverActivity.getStartIntent(this));
+    @OnClick(R.id.btn_add_players)
+    void onAddPlayerClicked() {
+        // open dialog
+        AddPlayerDialog.newInstance().show(getSupportFragmentManager(),AddPlayerDialog.TAG);
     }
 
-    @OnClick(R.id.btn_drinking_roulette)
-    void onDirtyRouletteClick() {
-        startActivity(DrinkingRouletteActivity.getStartIntent(this));
+    @OnClick(R.id.btn_play)
+    void onPlayClicked(){
+        if (playerArrayList.size()>0){
+            if (playerArrayList.size()==1){
+                showMessage(R.string.add_more_team);
+            }else{
+                // can play
+            }
+        }else{
+            showMessage(R.string.add_team);
+        }
+    }
+
+    @Override
+    public void onAddClick(Player player) {
+        mAdapter.addItem(player);
+        playerArrayList.add(player);
+        showPlayers(playerArrayList);
+    }
+
+    @Override
+    public void onItemClearClicked(Player crew) {
+        mAdapter.removeItem(crew);
+        playerArrayList.remove(crew);
+        showPlayers(playerArrayList);
     }
 }

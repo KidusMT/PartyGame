@@ -24,6 +24,9 @@ import com.kmt.party.ui.team.TeamAdapter;
 import com.kmt.party.ui.team.TeamMvpPresenter;
 import com.kmt.party.ui.team.TeamMvpView;
 import com.kmt.party.ui.team.TeamPresenter;
+import com.kmt.party.ui.team.dialog.AddPlayerMvpPresenter;
+import com.kmt.party.ui.team.dialog.AddPlayerMvpView;
+import com.kmt.party.ui.team.dialog.AddPlayerPresenter;
 import com.kmt.party.utils.rx.AppSchedulerProvider;
 import com.kmt.party.utils.rx.SchedulerProvider;
 
@@ -95,6 +98,13 @@ public class ActivityModule {
     @PerActivity
     TeamMvpPresenter<TeamMvpView> provideTeamPresenter(
             TeamPresenter<TeamMvpView> presenter) {
+        return presenter;
+    }
+
+    @Provides
+    @PerActivity
+    AddPlayerMvpPresenter<AddPlayerMvpView> provideAddPlayerPresenter(
+            AddPlayerPresenter<AddPlayerMvpView> presenter) {
         return presenter;
     }
 

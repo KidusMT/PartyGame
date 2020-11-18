@@ -138,5 +138,11 @@
     <string name="party_neve_have_i_ever_16">watched a friend (do it)</string>
     <string name="party_neve_have_i_ever_17">done it with a family member in the same building.</string>
     <string name="please_select_card_ntype_to_start_playing">Please select card  type to start playing.</string>
+    <string name="btn_cancel">cancel</string>
+    <string name="btn_add">add</string>
+    <string name="dialog_hint_enter_player_name">Enter player name</string>
+    <string name="dialog_title_add_player">Add Player</string>
+    <string name="add_more_team">Please add more team players.</string>
+    <string name="add_team">Please add team members to play the game.</string>
 
 </resources>

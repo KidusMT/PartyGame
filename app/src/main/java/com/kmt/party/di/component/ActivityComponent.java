@@ -10,6 +10,7 @@ import com.kmt.party.ui.settings.SettingsActivity;
 import com.kmt.party.ui.splash.SplashActivity;
 import com.kmt.party.ui.team.TeamActivity;
 import com.kmt.party.ui.team.TeamAdapter;
+import com.kmt.party.ui.team.dialog.AddPlayerDialog;
 
 import dagger.Component;
 
@@ -33,4 +34,6 @@ public interface ActivityComponent {
     void inject(TeamActivity activity);
 
     void inject(TeamAdapter adapter);
+
+    void inject(AddPlayerDialog dialog);
 }

@@ -17,6 +17,7 @@ import com.kmt.party.ui.base.BaseActivity;
 import com.kmt.party.ui.menu.MenuActivity;
 import com.kmt.party.ui.never.NeverActivity;
 import com.kmt.party.ui.settings.SettingsActivity;
+import com.kmt.party.ui.team.TeamActivity;
 import com.kmt.party.utils.RouletteColor;
 
 import java.util.ArrayList;
@@ -57,7 +58,7 @@ public class DrinkingRouletteActivity extends BaseActivity implements DrinkingRo
 
     @Override
     public void onBackPressed() {
-        startActivity(new Intent(DrinkingRouletteActivity.this, MenuActivity.class));
+        startActivity(new Intent(DrinkingRouletteActivity.this, TeamActivity.class));
     }
 
     @Override

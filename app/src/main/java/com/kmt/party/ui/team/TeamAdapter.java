@@ -6,6 +6,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Filter;
 import android.widget.Filterable;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -21,15 +22,13 @@ import java.util.List;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-public class TeamAdapter extends RecyclerView.Adapter<BaseViewHolder> implements Filterable {
+public class TeamAdapter extends RecyclerView.Adapter<BaseViewHolder>  {
 
-    private List<Player> crews;
     private List<Player> filteredCrew;
     private Context context;
-    private PrintCallback mPrintCallback;
+    private TeamCallback mTeamCallback;
 
     public TeamAdapter(Context context, ArrayList<Player> crews) {
-        this.crews = crews;
         this.context = context;
         filteredCrew = new ArrayList<>();
         filteredCrew.addAll(crews);
@@ -54,62 +53,36 @@ public class TeamAdapter extends RecyclerView.Adapter<BaseViewHolder> implements
     }
 
     public void addItems(List<Player> crews) {
-        this.crews.clear();
-        this.crews.addAll(crews);
-
         filteredCrew.clear();
         filteredCrew.addAll(crews);
         notifyDataSetChanged();
     }
 
-    public void setPrintCallback(PrintCallback callback) {
-        mPrintCallback = callback;
+    public void addItem(Player crews) {
+        filteredCrew.add(crews);
+        notifyDataSetChanged();
     }
 
-    @Override
-    public Filter getFilter() {
-        return new Filter() {
-            @Override
-            protected FilterResults performFiltering(CharSequence charSequence) {
-                String charString = charSequence.toString();
-                if (charString.isEmpty()) {
-                    filteredCrew = crews;
-                } else {
-                    List<Player> filteredList = new ArrayList<>();
-                    for (Player row : crews) {
-
-                        // name match condition. this might differ depending on your requirement
-                        // here we are looking for name or phone number match
-                        if (row != null && row.getName() != null)
-                            if (row.getName().toLowerCase().contains(charString.toLowerCase())) {// || row.getType().toLowerCase().contains(charSequence)) {
-                                filteredList.add(row);
-                            }
-                    }
-
-                    filteredCrew = filteredList;
-                }
-
-                FilterResults filterResults = new FilterResults();
-                filterResults.values = filteredCrew;
-                return filterResults;
-            }
-
-            @Override
-            protected void publishResults(CharSequence charSequence, FilterResults filterResults) {
-                filteredCrew = (List<Player>) filterResults.values;
-                notifyDataSetChanged();
-            }
-        };
+    public void removeItem(Player player){
+        filteredCrew.remove(player);
+        notifyDataSetChanged();
     }
 
-    public interface PrintCallback {
-        void onItemPrintClicked(Player crew);
+    public void setTeamCallback(TeamCallback callback) {
+        mTeamCallback = callback;
+    }
+
+    public interface TeamCallback {
+        void onItemClearClicked(Player crew);
     }
 
     public class AssignedTasksViewHolder extends BaseViewHolder {
 
         @BindView(R.id.player_name)
         TextView tvPlayerName;
+
+        @BindView(R.id.player_clear)
+        ImageView ivClearPlayer;
 
         Player player;
 
@@ -130,6 +103,7 @@ public class TeamAdapter extends RecyclerView.Adapter<BaseViewHolder> implements
             player = filteredCrew.get(position);
             if (player != null) {
                 tvPlayerName.setText(player.getName());
+                ivClearPlayer.setOnClickListener(v -> mTeamCallback.onItemClearClicked(player));
             }
         }
     }
