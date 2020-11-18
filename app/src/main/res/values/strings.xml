@@ -160,5 +160,8 @@
     <string name="drink_roulette_q14">If you had to sleep with one person in this room, who would it be?</string>
     <string name="drink_roulette_q15">What’s the longest you’ve gone without showering?</string>
     <string name="drink_roulette_q16">What’s the biggest secret that you’re keeping from everyone in this room?</string>
+    <string name="add_players">add Players</string>
+    <string name="play">play</string>
+    <string name="no_players_added_yet">No players added yet.</string>
 
 </resources>
