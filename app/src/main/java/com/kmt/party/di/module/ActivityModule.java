@@ -20,8 +20,14 @@ import com.kmt.party.ui.menu.MenuPresenter;
 import com.kmt.party.ui.settings.SettingsMvpPresenter;
 import com.kmt.party.ui.settings.SettingsMvpView;
 import com.kmt.party.ui.settings.SettingsPresenter;
+import com.kmt.party.ui.team.TeamAdapter;
+import com.kmt.party.ui.team.TeamMvpPresenter;
+import com.kmt.party.ui.team.TeamMvpView;
+import com.kmt.party.ui.team.TeamPresenter;
 import com.kmt.party.utils.rx.AppSchedulerProvider;
 import com.kmt.party.utils.rx.SchedulerProvider;
+
+import java.util.ArrayList;
 
 import dagger.Module;
 import dagger.Provides;
@@ -83,6 +89,19 @@ public class ActivityModule {
     SettingsMvpPresenter<SettingsMvpView> provideSettingsPresenter(
             SettingsPresenter<SettingsMvpView> presenter) {
         return presenter;
+    }
+
+    @Provides
+    @PerActivity
+    TeamMvpPresenter<TeamMvpView> provideTeamPresenter(
+            TeamPresenter<TeamMvpView> presenter) {
+        return presenter;
+    }
+
+    @Provides
+    @PerActivity
+    TeamAdapter provideTeamAdapter() {
+        return new TeamAdapter(provideContext(), new ArrayList<>());
     }
 
     @Provides

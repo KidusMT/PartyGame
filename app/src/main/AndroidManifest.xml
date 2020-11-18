@@ -55,6 +55,9 @@
         <activity
             android:name="com.kmt.party.ui.settings.LanguageListActivity"
             android:launchMode="singleTop" />
+        <activity
+            android:name="com.kmt.party.ui.team.TeamActivity"
+            android:launchMode="singleTop" />
     </application>
 
 </manifest>

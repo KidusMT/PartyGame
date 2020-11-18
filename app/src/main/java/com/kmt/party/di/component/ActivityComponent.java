@@ -8,6 +8,8 @@ import com.kmt.party.ui.never.NeverActivity;
 import com.kmt.party.ui.settings.LanguageListActivity;
 import com.kmt.party.ui.settings.SettingsActivity;
 import com.kmt.party.ui.splash.SplashActivity;
+import com.kmt.party.ui.team.TeamActivity;
+import com.kmt.party.ui.team.TeamAdapter;
 
 import dagger.Component;
 
@@ -27,4 +29,8 @@ public interface ActivityComponent {
     void inject(SettingsActivity activity);
 
     void inject(LanguageListActivity activity);
+
+    void inject(TeamActivity activity);
+
+    void inject(TeamAdapter adapter);
 }

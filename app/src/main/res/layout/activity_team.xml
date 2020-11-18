@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center_vertical"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical">
+    <LinearLayout
+        android:id="@+id/top_container"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_width="match_parent"
+        android:layout_height="?android:attr/actionBarSize"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.30"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:id="@+id/btn_back"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:paddingTop="8dp"
+                    android:paddingBottom="8dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_centerInParent="true"
+                    app:srcCompat="@drawable/ic_chevron" />
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:fontFamily="@font/architects_daughter_regular"
+                android:textAlignment="center"
+                android:textSize="20sp"
+                android:text="add Players"
+                android:textAllCaps="true"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.30"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:id="@+id/btn_instruction"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:paddingTop="8dp"
+                    android:paddingBottom="8dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_centerVertical="true"
+                    android:layout_centerHorizontal="true"
+                    android:layout_gravity="center_horizontal"
+                    app:srcCompat="@drawable/ic_add_player" />
+
+            </RelativeLayout>
+
+        </LinearLayout>
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/player_recycler"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scrollbars="vertical"
+            tools:listitem="@layout/item_player" />
+
+        <TextView
+            android:id="@+id/tv_no_player"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_margin="5dp"
+            android:fontFamily="sans-serif-condensed"
+            android:gravity="center_vertical"
+            android:text="No crew information."
+            android:textAlignment="center"
+            android:textColor="@color/mater_grey_700"
+            android:textSize="18sp"
+            android:visibility="gone" />
+
+    </RelativeLayout>
+
+
+</LinearLayout>
+
