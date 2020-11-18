@@ -14,6 +14,7 @@ import androidx.annotation.NonNull;
 import com.kmt.party.R;
 import com.kmt.party.ui.base.BaseActivity;
 import com.kmt.party.ui.drinking.DrinkingRouletteActivity;
+import com.kmt.party.ui.never.NeverActivity;
 import com.kmt.party.utils.AppConstants;
 import com.kmt.party.utils.AppLogger;
 
@@ -31,7 +32,11 @@ public class LanguageListActivity extends BaseActivity implements View.OnClickLi
             mRadioButton_german, mRadioButton_french, mRadioButton_japanese;
 
     SharedPreferences sharedPreferences;
-
+    public static String fromScreen = NeverActivity.TAG;
+    public static Intent getStartIntent(Context context, String from) {
+        fromScreen = from;
+        return new Intent(context, LanguageListActivity.class);
+    }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -140,8 +145,8 @@ public class LanguageListActivity extends BaseActivity implements View.OnClickLi
                     e.printStackTrace();
                 }
                 onConfigurationChanged(config);
-                reload();
-                finish();
+//                reload();
+                onBackPressed();
 
                 break;
             case R.id.check_russian:
@@ -165,8 +170,8 @@ public class LanguageListActivity extends BaseActivity implements View.OnClickLi
                     e.printStackTrace();
                 }
                 onConfigurationChanged(configRu);
-                reload();
-                finish();
+//                reload();
+                onBackPressed();
 
                 break;
             case R.id.check_spanish:
@@ -190,8 +195,8 @@ public class LanguageListActivity extends BaseActivity implements View.OnClickLi
                     e.printStackTrace();
                 }
                 onConfigurationChanged(configEs);
-                reload();
-                finish();
+//                reload();
+                onBackPressed();
 
                 break;
             case R.id.check_portuguese:
@@ -215,8 +220,8 @@ public class LanguageListActivity extends BaseActivity implements View.OnClickLi
                     e.printStackTrace();
                 }
                 onConfigurationChanged(configPt);
-                reload();
-                finish();
+//                reload();
+                onBackPressed();
 
                 break;
             case R.id.check_german:
@@ -240,8 +245,8 @@ public class LanguageListActivity extends BaseActivity implements View.OnClickLi
                     e.printStackTrace();
                 }
                 onConfigurationChanged(configDe);
-                reload();
-                finish();
+//                reload();
+                onBackPressed();
 
                 break;
             case R.id.check_french:
@@ -265,8 +270,8 @@ public class LanguageListActivity extends BaseActivity implements View.OnClickLi
                     e.printStackTrace();
                 }
                 onConfigurationChanged(configFr);
-                reload();
-                finish();
+//                reload();
+                onBackPressed();
 
                 break;
             case R.id.check_japanese:
@@ -290,8 +295,8 @@ public class LanguageListActivity extends BaseActivity implements View.OnClickLi
                     e.printStackTrace();
                 }
                 onConfigurationChanged(configJa);
-                reload();
-                finish();
+//                reload();
+                onBackPressed();
 
                 break;
 
@@ -321,9 +326,14 @@ public class LanguageListActivity extends BaseActivity implements View.OnClickLi
 
     }
 
+    @Override
+    public void onBackPressed() {
+        startActivity(SettingsActivity.getStartIntent(LanguageListActivity.this, fromScreen));
+        finish();
+    }
+
     @OnClick(R.id.back_button)
     public void onBackClick(View v) {
-        startActivity(new Intent(LanguageListActivity.this, SettingsActivity.class));
-        finish();
+     onBackPressed();
     }
 }

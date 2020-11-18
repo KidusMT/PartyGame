@@ -9,6 +9,7 @@ import com.kmt.party.R;
 import com.kmt.party.ui.base.BaseActivity;
 import com.kmt.party.ui.menu.MenuActivity;
 import com.kmt.party.ui.settings.SettingsActivity;
+import com.kmt.party.utils.AppUtils;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -38,6 +39,7 @@ public class SplashActivity extends BaseActivity {
         super.onPostResume();
         tvWelcome.postDelayed(() -> {
             startActivity(MenuActivity.getStartIntent(this));
+//            AppUtils.reload(this, MenuActivity.getStartIntent(this));
             finish();
         }, 1000);
     }

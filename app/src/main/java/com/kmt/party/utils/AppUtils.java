@@ -1,5 +1,9 @@
 package com.kmt.party.utils;
 
+import android.app.Activity;
+import android.content.Context;
+import android.content.Intent;
+
 import java.text.DecimalFormat;
 
 @SuppressWarnings({"unused", "RedundantSuppression"})
@@ -16,6 +20,7 @@ public final class AppUtils {
 
     private AppUtils() {
     }
+
 
 //    fun getCurrentTheme(context:Context?): Int {
 //        return getDefaultSharedPreferences(context).getInt(Constant.PREFERENCE_THEME, 0)

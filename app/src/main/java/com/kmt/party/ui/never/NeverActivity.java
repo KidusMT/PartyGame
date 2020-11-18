@@ -82,7 +82,8 @@ public class NeverActivity extends BaseActivity implements NeverMvpView {
 
     @Override
     public void onBackPressed() {
-        startActivity(new Intent(NeverActivity.this, MenuActivity.class));
+        startActivity(MenuActivity.getStartIntent(NeverActivity.this));
+        finish();
     }
 
     @Override
@@ -122,7 +123,6 @@ public class NeverActivity extends BaseActivity implements NeverMvpView {
     @OnClick(R.id.btn_back)
     public void OnClickBack(View view) {
         onBackPressed();
-        finish();
     }
 
     @Override

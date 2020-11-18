@@ -14,6 +14,7 @@ import android.view.inputmethod.InputMethodManager;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.annotation.StringRes;
 import androidx.appcompat.app.AppCompatActivity;
@@ -27,6 +28,10 @@ import com.kmt.party.R;
 import com.kmt.party.di.component.ActivityComponent;
 import com.kmt.party.di.component.DaggerActivityComponent;
 import com.kmt.party.di.module.ActivityModule;
+import com.kmt.party.utils.AppUtils;
+import com.kmt.party.utils.LocaleManager;
+
+import org.intellij.lang.annotations.Language;
 
 import java.util.Locale;
 
@@ -56,10 +61,21 @@ public abstract class BaseActivity extends AppCompatActivity
     }
 
     @Override
-    protected void attachBaseContext(Context newBase) {
+    public void attachBaseContext(Context newBase) {
         MultiDex.install(this);
         MvpApp.setContext(newBase);
-        super.attachBaseContext(newBase);
+        super.attachBaseContext(updateBaseContextLocale(newBase));
+    }
+
+    private Context updateBaseContextLocale(Context context) {
+        String language = LocaleManager.getLanguage(context); // Helper method to get saved language from SharedPreferences
+        Locale locale = new Locale(language);
+        Locale.setDefault(locale);
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
+            return updateResourcesLocale(context, locale);
+        }
+
+        return updateResourcesLocaleLegacy(context, locale);
     }
 
     @TargetApi(Build.VERSION_CODES.N)
@@ -69,13 +85,18 @@ public abstract class BaseActivity extends AppCompatActivity
         return context.createConfigurationContext(configuration);
     }
 
-    @SuppressWarnings({"unused", "RedundantSuppression", "deprecation"})
+    @SuppressWarnings("deprecation")
     private Context updateResourcesLocaleLegacy(Context context, Locale locale) {
         Resources resources = context.getResources();
         Configuration configuration = resources.getConfiguration();
         configuration.locale = locale;
         resources.updateConfiguration(configuration, resources.getDisplayMetrics());
         return context;
+    }
+
+    @Override
+    public void onConfigurationChanged(@NonNull Configuration newConfig) {
+        super.onConfigurationChanged(newConfig);
     }
 
     @TargetApi(Build.VERSION_CODES.M)

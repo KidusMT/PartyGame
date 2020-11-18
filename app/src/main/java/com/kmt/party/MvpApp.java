@@ -3,6 +3,7 @@ package com.kmt.party;
 import android.annotation.SuppressLint;
 import android.app.Application;
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.res.Configuration;
 import android.os.Build;
@@ -17,6 +18,7 @@ import com.kmt.party.di.component.DaggerApplicationComponent;
 import com.kmt.party.di.module.ApplicationModule;
 import com.kmt.party.utils.AppConstants;
 import com.kmt.party.utils.AppLogger;
+import com.kmt.party.utils.AppUtils;
 import com.kmt.party.utils.LocaleManager;
 
 import java.util.Locale;
@@ -67,7 +69,8 @@ public class MvpApp extends Application {
         MultiDex.install(mContext);
         singleton = this;
 
-        setupLanguagePreferences();
+
+//        setupLanguagePreferences();
     }
 
     @Override
@@ -77,10 +80,8 @@ public class MvpApp extends Application {
     }
 
     private void setupLanguagePreferences() {
-
-        String default_language = getSharedPreferences(AppConstants.PREF_NAME, Context.MODE_PRIVATE)
+        String default_language = getBaseContext().getSharedPreferences(AppConstants.PREF_NAME, Context.MODE_PRIVATE)
                 .getString(PREF_KEY_CURRENT_LANGUAGE, getString(R.string.lang_english_abbr));
-
         Log.e("Language:P", default_language + "");
 
         Locale locale = new Locale(default_language);
@@ -91,7 +92,6 @@ public class MvpApp extends Application {
         } else {
             config.locale = locale;
         }
-        getResources().updateConfiguration(config, getResources().getDisplayMetrics());
     }
 
     public ApplicationComponent getComponent() {

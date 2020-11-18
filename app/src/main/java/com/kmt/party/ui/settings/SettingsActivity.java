@@ -82,7 +82,8 @@ public class SettingsActivity extends BaseActivity implements SettingsMvpView {
 
     @OnClick(R.id.layout_current_language)
     public void onClickCurrentLanguage(View view) {
-        startActivity(new Intent(this, LanguageListActivity.class));
+        startActivity(LanguageListActivity.getStartIntent(SettingsActivity.this, fromScreen));
+        finish();
     }
 
     @Override
@@ -93,14 +94,17 @@ public class SettingsActivity extends BaseActivity implements SettingsMvpView {
     @OnClick(R.id.back_button)
     public void OnClickBack(View view) {
         onBackPressed();
-        finish();
     }
 
     @Override
     public void onBackPressed() {
-        if (fromScreen.equals(NeverActivity.TAG))
+        if (fromScreen.equals(NeverActivity.TAG)) {
             startActivity(new Intent(SettingsActivity.this, NeverActivity.class));
-        else startActivity(new Intent(SettingsActivity.this, DrinkingRouletteActivity.class));
+            finish();
+        } else {
+            startActivity(new Intent(SettingsActivity.this, DrinkingRouletteActivity.class));
+            finish();
+        }
     }
 
 }
