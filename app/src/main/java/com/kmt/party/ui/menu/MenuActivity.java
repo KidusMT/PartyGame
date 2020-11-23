@@ -40,7 +40,7 @@ public class MenuActivity extends BaseActivity implements MenuMvpView {
 
     @Override
     public void onBackPressed() {
-        super.onBackPressed();
+        finish();
     }
 
     @Override

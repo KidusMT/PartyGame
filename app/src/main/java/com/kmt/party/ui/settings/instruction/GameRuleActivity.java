@@ -14,6 +14,7 @@ import com.kmt.party.ui.base.BaseActivity;
 import com.kmt.party.ui.drinking.DrinkingRouletteActivity;
 import com.kmt.party.ui.never.NeverActivity;
 import com.kmt.party.ui.settings.SettingsActivity;
+import com.kmt.party.ui.team.TeamActivity;
 
 import javax.inject.Inject;
 
@@ -99,12 +100,7 @@ public class GameRuleActivity extends BaseActivity implements GameRuleMvpView {
 
     @Override
     public void onBackPressed() {
-        if (fromScreen.equals(NeverActivity.TAG)) {
-            startActivity(SettingsActivity.getStartIntent(GameRuleActivity.this, NeverActivity.TAG));
-            finish();
-        } else {
-            startActivity(SettingsActivity.getStartIntent(GameRuleActivity.this, DrinkingRouletteActivity.TAG));
-            finish();
-        }
+        startActivity(SettingsActivity.getStartIntent(GameRuleActivity.this, fromScreen));
+        finish();
     }
 }

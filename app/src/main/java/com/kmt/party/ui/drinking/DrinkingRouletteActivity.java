@@ -106,19 +106,20 @@ public class DrinkingRouletteActivity extends BaseActivity implements DrinkingRo
             selectedQuestion = questionArrayList.get(i);
         }
 
-        luckyWheel.addWheelItems(wheelItems);
-        Random rand = new Random();
-        final int[] targ = {randNum[rand.nextInt(1000) % (players.size() - 1)]};
-        luckyWheel.setTarget(targ[0]);
-        luckyWheel.setLuckyWheelReachTheTarget(() -> {
-            DrinkingQuestionsDialog.newInstance(questionArrayList.get(currentQuestion[0]), players.get(targ[0] - 1)).show(getSupportFragmentManager(), AddPlayerDialog.TAG);
-//            showMessage(players.get(targ[0]-1).getName()+ " player selected");
-            targ[0] = randNum[rand.nextInt(1000) % (players.size() - 1)];
+        if (players.size()>0){
+            luckyWheel.addWheelItems(wheelItems);
+            Random rand = new Random();
+            final int[] targ = {randNum[rand.nextInt(1000) % (players.size() - 1)]};
             luckyWheel.setTarget(targ[0]);
-            currentQuestion[0]++;
-            if (currentQuestion[0] >= questionArrayList.size())
-                currentQuestion[0] = 0;// resetting when reached on last item
-        });
+            luckyWheel.setLuckyWheelReachTheTarget(() -> {
+                DrinkingQuestionsDialog.newInstance(questionArrayList.get(currentQuestion[0]), players.get(targ[0] - 1)).show(getSupportFragmentManager(), AddPlayerDialog.TAG);
+                targ[0] = randNum[rand.nextInt(1000) % (players.size() - 1)];
+                luckyWheel.setTarget(targ[0]);
+                currentQuestion[0]++;
+                if (currentQuestion[0] >= questionArrayList.size())
+                    currentQuestion[0] = 0;// resetting when reached on last item
+            });
+        }
     }
 
     @Override

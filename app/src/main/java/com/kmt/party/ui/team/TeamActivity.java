@@ -14,6 +14,7 @@ import com.kmt.party.data.model.Player;
 import com.kmt.party.ui.base.BaseActivity;
 import com.kmt.party.ui.drinking.DrinkingRouletteActivity;
 import com.kmt.party.ui.menu.MenuActivity;
+import com.kmt.party.ui.never.NeverActivity;
 import com.kmt.party.ui.team.dialog.AddPlayerDialog;
 
 import java.util.ArrayList;
@@ -63,7 +64,7 @@ public class TeamActivity extends BaseActivity implements TeamMvpView, TeamCommu
 
     @Override
     public void onBackPressed() {
-        startActivity(new Intent(TeamActivity.this, MenuActivity.class));
+        startActivity(MenuActivity.getStartIntent(TeamActivity.this));
         finish();
     }
 

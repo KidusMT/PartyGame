@@ -77,9 +77,9 @@
             <ImageView
                 android:layout_width="80dp"
                 android:layout_height="match_parent"
-                android:layout_marginTop="8dp"
-                android:layout_marginBottom="8dp"
-                app:srcCompat="@drawable/ic_fun_game" />
+                android:layout_marginTop="12dp"
+                android:layout_marginBottom="12dp"
+                app:srcCompat="@drawable/ic_never" />
 
             <TextView
                 android:layout_width="match_parent"

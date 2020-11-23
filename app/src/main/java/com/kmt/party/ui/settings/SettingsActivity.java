@@ -11,6 +11,7 @@ import com.kmt.party.ui.base.BaseActivity;
 import com.kmt.party.ui.drinking.DrinkingRouletteActivity;
 import com.kmt.party.ui.never.NeverActivity;
 import com.kmt.party.ui.settings.instruction.GameRuleActivity;
+import com.kmt.party.ui.team.TeamActivity;
 
 import javax.inject.Inject;
 
@@ -53,15 +54,9 @@ public class SettingsActivity extends BaseActivity implements SettingsMvpView {
         super.onDestroy();
     }
 
-    @OnClick(R.id.btn_settings_drinking_instruction)
-    void onDrinkingRouletteInstructionClicked(){
-        startActivity(GameRuleActivity.getStartIntent(SettingsActivity.this, DrinkingRouletteActivity.TAG));
-        finish();
-    }
-
-    @OnClick(R.id.btn_settings_never_instruction)
-    void onNeverEverHaveInstructionClicked(){
-        startActivity(GameRuleActivity.getStartIntent(SettingsActivity.this, NeverActivity.TAG));
+    @OnClick({R.id.btn_settings_drinking_instruction, R.id.btn_settings_never_instruction})
+    void onInstructionClicked(){
+        startActivity(GameRuleActivity.getStartIntent(SettingsActivity.this, fromScreen));
         finish();
     }
 
@@ -112,12 +107,11 @@ public class SettingsActivity extends BaseActivity implements SettingsMvpView {
     @Override
     public void onBackPressed() {
         if (fromScreen.equals(NeverActivity.TAG)) {
-            startActivity(new Intent(SettingsActivity.this, NeverActivity.class));
-            finish();
+            startActivity(NeverActivity.getStartIntent(SettingsActivity.this));
         } else {
-            startActivity(new Intent(SettingsActivity.this, DrinkingRouletteActivity.class));
-            finish();
+            startActivity(TeamActivity.getStartIntent(SettingsActivity.this));
         }
+        finish();
     }
 
 }

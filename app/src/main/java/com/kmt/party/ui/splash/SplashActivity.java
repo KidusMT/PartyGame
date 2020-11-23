@@ -38,7 +38,7 @@ public class SplashActivity extends BaseActivity {
     protected void onPostResume() {
         super.onPostResume();
         tvWelcome.postDelayed(() -> {
-            startActivity(MenuActivity.getStartIntent(this));
+            startActivity(MenuActivity.getStartIntent(SplashActivity.this));
 //            AppUtils.reload(this, MenuActivity.getStartIntent(this));
             finish();
         }, 1000);

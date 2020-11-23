@@ -182,7 +182,7 @@
     </string>
     <string name="never_have_i_ever_game_rule_title">
         <![CDATA[
-            😃 Règles du jeu
+            😃 Rules of the game
         ]]>
     </string>
 
@@ -230,7 +230,6 @@
             <b class="whb">7) Repeat until only one person has alcohol left in their cup.</b> The game ends when only person has any of their drink left. That person wins the game. You can repeat the game as many times as you like.
             </div>
     ]]></string>
-
     <string name="drinking_description">
         <![CDATA[
             <p>Roulette is a game that has been around since the early 18th century in France. Since then, Roulette has become a popular game throughout the world.</p>
@@ -243,7 +242,7 @@
             <p>Each player takes a turn spinning the wheel and will drink the contents of the appropriate glass. If the contents of the glass have already been consumed, that player will not take a shot that round. Continue until all of the shot glasses are empty.</p>
             <h3 id="pick-your-glasses">Pick Your Glasses:</h3>
             <p>Each player takes possession of a number of glasses – if there are four players, then four glasses each would be a good number. The wheel is spun, and the owner of the relevant glass will then down the contents of the glass. This version has the advantage over version one in that nobody will be required to drink more than four shots and possibly make a complete fool of them self.</p>
-            <h3 id="mix-match">Mix &amp; Match:</h3>
+            <h3 id="mix-match">Mix & Match:</h3>
             <p>Place a different spirit in each of the shot glasses and enjoy a different drink with every spin.</p>
             <h3 id="instructions">Instructions:</h3>
             <ul><li><strong>Wam:</strong> Fill the shot glasses with your alcohol of choice (of course you can vary this from glass to glass).</li><li><strong>Bam:</strong> Leave the roulette wheel in the box.</li><li><strong>Thank You Ma’am:</strong> Drink the contents of the glasses.</li></ul>
