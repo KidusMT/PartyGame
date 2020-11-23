@@ -1,7 +1,7 @@
 [![Build status](https://build.appcenter.ms/v0.1/apps/4de97e03-367e-48ad-af36-df6cc6254d44/branches/develop/badge)](https://appcenter.ms)
 
 <p align="center">
-    <img src="screenshots/ic_launcher.png" width="150" />
+    <img src="screenshots/ic_launcher-playstore.png" width="150" />
     <h2 align="center"> Party Game </h2>
     <p align="center"> <code> A drinking game is basically a party game with drinking rules. The rules of the game determine when and how much someone has to drink. When you play in a pub, there are sometimes rules for who has to pay for the drinks. </code> </p>
 </p>
