@@ -43,7 +43,7 @@
                 android:layout_height="match_parent"
                 android:layout_marginTop="8dp"
                 android:layout_marginBottom="8dp"
-                android:src="@drawable/ic_drinking" />
+                android:src="@drawable/ic_drink_roulette" />
 
             <TextView
                 android:layout_width="match_parent"
@@ -79,7 +79,7 @@
                 android:layout_height="match_parent"
                 android:layout_marginTop="8dp"
                 android:layout_marginBottom="8dp"
-                android:src="@drawable/ic_never_menu" />
+                app:srcCompat="@drawable/ic_fun_game" />
 
             <TextView
                 android:layout_width="match_parent"

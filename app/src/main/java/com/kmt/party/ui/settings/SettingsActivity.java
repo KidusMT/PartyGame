@@ -10,6 +10,7 @@ import com.kmt.party.R;
 import com.kmt.party.ui.base.BaseActivity;
 import com.kmt.party.ui.drinking.DrinkingRouletteActivity;
 import com.kmt.party.ui.never.NeverActivity;
+import com.kmt.party.ui.settings.instruction.GameRuleActivity;
 
 import javax.inject.Inject;
 
@@ -50,6 +51,18 @@ public class SettingsActivity extends BaseActivity implements SettingsMvpView {
     protected void onDestroy() {
         mPresenter.onDetach();
         super.onDestroy();
+    }
+
+    @OnClick(R.id.btn_settings_drinking_instruction)
+    void onDrinkingRouletteInstructionClicked(){
+        startActivity(GameRuleActivity.getStartIntent(SettingsActivity.this, DrinkingRouletteActivity.TAG));
+        finish();
+    }
+
+    @OnClick(R.id.btn_settings_never_instruction)
+    void onNeverEverHaveInstructionClicked(){
+        startActivity(GameRuleActivity.getStartIntent(SettingsActivity.this, NeverActivity.TAG));
+        finish();
     }
 
     @Override

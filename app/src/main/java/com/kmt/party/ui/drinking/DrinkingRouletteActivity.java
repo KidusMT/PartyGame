@@ -78,7 +78,7 @@ public class DrinkingRouletteActivity extends BaseActivity implements DrinkingRo
         // open settings screen
         // 1) change language
         // 2) instruction of the game
-        startActivity(SettingsActivity.getStartIntent(DrinkingRouletteActivity.this, NeverActivity.TAG));
+        startActivity(SettingsActivity.getStartIntent(DrinkingRouletteActivity.this, TAG));
     }
 
     @OnClick(R.id.btn_back)

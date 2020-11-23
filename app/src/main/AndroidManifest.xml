@@ -45,6 +45,10 @@
             android:launchMode="singleTop" />
 
         <activity
+            android:name="com.kmt.party.ui.settings.instruction.GameRuleActivity"
+            android:launchMode="singleTop" />
+
+        <activity
             android:name="com.kmt.party.ui.drinking.DrinkingRouletteActivity"
             android:launchMode="singleTop" />
 

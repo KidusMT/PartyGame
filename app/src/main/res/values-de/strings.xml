@@ -144,4 +144,83 @@
     <string name="add_players">Spieler hinzufügen</string>
     <string name="play">abspielen</string>
     <string name="no_players_added_yet">Es wurden noch keine Spieler hinzugefügt.</string>
+    <string name="game_rule_title">Anweisung</string>
+    <string name="never_have_i_ever_description_title">🔥 Spielregeln</string>
+    <string name="never_have_i_ever_description">
+        <![CDATA[
+            <p>
+                <strong> Niemals </strong>, auch bekannt als <strong> Niemals </strong>,
+                <strong> Ich habe nie … </strong> oder <strong> Zehn Finger </strong>. Es ist eines der besten
+                Frage-Spiele, um sich kennenzulernen. Hier finden Sie alles, was Sie brauchen
+                Spielen Sie dieses legendäre Partyspiel.
+            </p>
+        ]]>
+      </string>
+    <string name="never_have_i_ever_game_rule_title">
+        <![CDATA[
+            😃 Spielregeln
+        ]]>
+    </string>
+    <string name="never_have_i_ever_game_rules"><![CDATA[
+
+            <div class = "step">
+                <b class = "whb"> 1) Sammeln Sie mindestens 5 Spieler. </ b> Da in dieser Version des Spiels Alkohol getrunken wird, müssen alle Spieler das gesetzliche Mindestalter für Alkoholkonsum erreicht haben. Sie können so viele Spieler haben, wie Sie möchten. Wenn Sie jedoch mehr als 10 Spieler haben, teilen Sie die große Gruppe in mehrere Gruppen mit weniger Spielern auf.
+            </ div>
+
+            <br>
+
+            <div class="step">
+            <b class = "whb"> 2) Stellen Sie sicher, dass jeder die gleiche Menge zu trinken hat. </ b> Es liegt an jedem einzelnen Spieler, was er trinken möchte. Aber um das Spiel fairer zu gestalten, sollte jeder ungefähr die gleiche Menge in seinen Bechern haben. Sie können mit Bier, Wein oder Mixgetränken spielen.
+            <ul> <li> Sie können die Trinkversion des Spiels auch mit Alkohol spielen. Jedes Mal, wenn jemand das getan hat, was der Spieler sagt, muss er einen Schuss machen. Sie müssen die Aufnahmen nachfüllen. </ Li> </ ul>
+            </div>
+
+            <br>
+
+            <div class="step">
+                <b class = "whb"> 3) Lassen Sie den ersten Spieler etwas ankündigen, das er noch nie getan hat. </ b> Jemand kann sich freiwillig melden, um zuerst zu gehen, oder Sie können jemanden auswählen, der Stein, Papier oder Schere spielt. In der Trinkversion des Spiels sind die Dinge, die die Spieler sagen, etwas risikoreicher. Der erste Spieler sagt "Ich habe noch nie …" und folgt ihm mit etwas, was er noch nie getan hat.
+            <ul> <li> Versuchen Sie, sich Dinge auszudenken, die Sie noch nie getan haben, die Sie aber von anderen Spielern kennen. Dies stellt sicher, dass Sie nicht trinken müssen, aber sie tun es und kann die Spieler schneller aus dem Spiel bringen. </ Li> </ ul>
+            </div>
+
+            <br>
+
+            <div class="step">
+                <b class = "whb"> 4) Lassen Sie die Spieler, die das getan haben, was der erste Spieler gesagt hat, etwas trinken. </ b> Wenn Sie das getan haben, was der erste Spieler gesagt hat, dass sie es nicht getan haben, müssen Sie etwas trinken dein Getränk. Um es fair zu machen, können Sie es zeitlich festlegen, sodass alle Spieler für die gleiche Zeit trinken müssen. Etwa 3 Sekunden sind normalerweise genug Zeit.
+            </div>
+
+            <br>
+
+            <div class="step">
+                <b class = "whb"> 5) Wechseln Sie zum nächsten Spieler. </ b> Der nächste Spieler - der Spieler unmittelbar links vom ersten Spieler - ist an der Reihe. Sie sagen etwas, was sie noch nie getan haben, indem sie die Konstruktion "Niemals habe ich jemals …" verwenden. Die Spieler, die das Ding gemacht haben, trinken, diejenigen, die nicht getrunken haben.
+            </div>
+
+            <br>
+
+            <div class="step">
+                <b class = "whb"> 6) Lassen Sie den ersten Spieler trinken, wenn es niemand anderes tut. </ b> Wenn der Spieler niemanden zum Trinken bringen kann - das heißt, der Spieler ist die einzige Person, die das getan hat, was sie gesagt haben - der Spieler muss trinken.
+            </div>
+
+            <br>
+
+            <div class="step">
+            <b class = "whb"> 7) Wiederholen Sie diesen Vorgang, bis nur noch eine Person Alkohol in der Tasse hat. </ b> Das Spiel endet, wenn nur noch eine Person etwas von ihrem Getränk übrig hat. Diese Person gewinnt das Spiel. Sie können das Spiel so oft wiederholen, wie Sie möchten.
+            </div>
+    ]]></string>
+    <string name="drinking_description">
+        <![CDATA[
+            <p> Roulette ist ein Spiel, das es seit dem frühen 18. Jahrhundert in Frankreich gibt. Gleiches ist Roulette ein weltfreudiges Spiel. </ P>
+        ]]>
+    </string>
+    <string name="drinking_rules">
+        <![CDATA[
+            <h2 id = "Wie-spielst du-trinkendes Roulette?"> Wie spielst du trinkendes Roulette? </ h2>
+            <h3 id = "Spin-Drink"> Spin & amp; Trinken: </ h3>
+            <p> Jeder Spieler dreht abwechselnd das Rad und trinkt den Inhalt des entsprechenden Glases. Wenn der Inhalt des Glases bereits verbraucht ist, schießt dieser Spieler in dieser Runde nicht. Fahren Sie fort, bis alle Schnapsgläser leer sind. </ P>
+            <h3 id = "Pick-your-Glasses"> Wählen Sie Ihre Brille: </ h3>
+            <p> Jeder Spieler besitzt eine Anzahl von Brillen - wenn es vier Spieler gibt, wären jeweils vier Brillen eine gute Anzahl. Das Rad wird gedreht, und der Besitzer des entsprechenden Glases wird dann den Inhalt des Glases herunterfahren. Diese Version hat gegenüber Version 1 den Vorteil, dass niemand mehr als vier Schüsse trinken und sich möglicherweise selbst zum Narren halten muss. </ P>
+            <h3 id = "mix-match"> Mix & amp; Übereinstimmung: </ h3>
+            <p> Geben Sie in jedes Schnapsglas einen anderen Geist und genießen Sie bei jeder Drehung ein anderes Getränk. </ p>
+            <h3 id = "Anweisungen"> Anweisungen: </ h3>
+            <ul> <ul> <li> <strong> Wam: </ strong> Füllen Sie die Schnapsgläser mit dem Alkohol Ihrer Wahl (natürlich können Sie diesen von Glas zu Glas variieren). </ li> <li> <strong> Bam: < / strong> Lassen Sie das Roulette-Rad in der Schachtel. </ li> <li> <strong> Vielen Dank, Ma'am: </ strong> Trinken Sie den Inhalt der Gläser. </ li> </ ul>
+        ]]>
+    </string>
 </resources>

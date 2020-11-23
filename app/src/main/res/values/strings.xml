@@ -6,6 +6,7 @@
     <string name="fun">Fun</string>
     <string name="dirty">Dirty</string>
     <string name="settings">Settings</string>
+    <string name="game_rule_title">Instruction</string>
 
     <string name="english" translatable="false">English</string>
     <string name="russian" translatable="false">русский язык</string>
@@ -163,5 +164,90 @@
     <string name="add_players">add Players</string>
     <string name="play">play</string>
     <string name="no_players_added_yet">No players added yet.</string>
+    <!--    <string name="never_have_i_ever_description" formatted="false" > <![CDATA[ &lt;html&gt;&lt;p&gt;&lt;strong&gt;Never have I ever&lt;/strong&gt;, also known as &lt;strong&gt;Never ever&lt;/strong&gt;, &lt;strong&gt;I&rsquo;ve Never&hellip;&lt;/strong&gt; or &lt;strong&gt;Ten Fingers&lt;/strong&gt;. It&rsquo;s one of the best question games to get to know each other. Here you&rsquo;ll find everything you need to play this iconic party game.&lt;/p&gt;&lt;/html&gt; ]]> </string>-->
+    <string name="never_have_i_ever_description_title">
+        <![CDATA[
+            🔥 Game Rules
+        ]]>
+    </string>
+    <string name="never_have_i_ever_description">
+        <![CDATA[
+            <p>
+                <strong>Never have I ever</strong>, also known as <strong>Never ever</strong>,
+                <strong>I’ve Never…</strong> or <strong>Ten Fingers</strong>. It’s one of the best
+                question games to get to know each other. Here you’ll find everything you need to
+                play this iconic party game.
+            </p>
+        ]]>
+    </string>
+    <string name="never_have_i_ever_game_rule_title">
+        <![CDATA[
+            😃 Règles du jeu
+        ]]>
+    </string>
+
+    <string name="never_have_i_ever_game_rules"><![CDATA[
+
+            <div class="step">
+                <b class="whb">1) Gather at least 5 players.</b> Since there’s drinking involved in this version of the game, all of the players need to be of legal drinking age. You can have as many players as you want, but if you have more than 10, break the large group into multiple groups of fewer players.
+            </div>
+
+            <br>
+
+            <div class="step">
+            <b class="whb">2) Make sure everyone has the same amount to drink.</b> It’s up to each individual player what they want to drink. But to make the game more fair, everyone should have about the same amount in their cups. You can play with beer, wine, or mixed drinks.
+            <ul><li>You can also play the drinking version of the game using shots of alcohol. Every time someone has done the thing the player says, they have to take a shot. You’ll have to refill the shots as you go.</li></ul>
+            </div>
+
+            <br>
+
+            <div class="step">
+                <b class="whb">3) Have the first player announce something they’ve never done.</b> Someone can volunteer to go first, or you can choose someone playing rock, paper, scissors. In the drinking version of the game, the things players say tend to be a little more risqué. The first player says “Never have I ever…” and then follows it with something they’ve never done.
+            <ul><li>Try coming up with things you’ve never done, but that you know other people playing have. This ensures you don’t have to drink but they do, and can get players out of the game quicker.</li></ul>
+            </div>
+
+            <br>
+
+            <div class="step">
+                <b class="whb">4) Have the players who have done what the first player said drink.</b> If you’ve done what the first player has said they haven’t, you have to take a drink of your drink. To make it fair, you can time it so all the players have to drink for the same amount of time. About 3 seconds is usually enough time.
+            </div>
+
+            <br>
+
+            <div class="step">
+                <b class="whb">5) Move to the next player.</b> The next player - the player to the immediate left of the first player - takes their turn. They say something they’ve never done, using the “Never have I ever…” construction. The players who have done that thing drink, the ones who have not don’t drink.
+            </div>
+
+            <br>
+
+            <div class="step">
+                <b class="whb">6) Have the first player drink if nobody else does.</b> If the player can’t get anyone to drink – meaning the player is the only person who’s done the thing they said – the player has to drink.
+            </div>
+
+            <br>
+
+            <div class="step">
+            <b class="whb">7) Repeat until only one person has alcohol left in their cup.</b> The game ends when only person has any of their drink left. That person wins the game. You can repeat the game as many times as you like.
+            </div>
+    ]]></string>
+
+    <string name="drinking_description">
+        <![CDATA[
+            <p>Roulette is a game that has been around since the early 18th century in France. Since then, Roulette has become a popular game throughout the world.</p>
+        ]]>
+    </string>
+    <string name="drinking_rules">
+        <![CDATA[
+            <h2 id="how-do-you-play-drinking-roulette">How Do You Play Drinking Roulette?</h2>
+            <h3 id="spin-drink">Spin &amp; Drink:</h3>
+            <p>Each player takes a turn spinning the wheel and will drink the contents of the appropriate glass. If the contents of the glass have already been consumed, that player will not take a shot that round. Continue until all of the shot glasses are empty.</p>
+            <h3 id="pick-your-glasses">Pick Your Glasses:</h3>
+            <p>Each player takes possession of a number of glasses – if there are four players, then four glasses each would be a good number. The wheel is spun, and the owner of the relevant glass will then down the contents of the glass. This version has the advantage over version one in that nobody will be required to drink more than four shots and possibly make a complete fool of them self.</p>
+            <h3 id="mix-match">Mix &amp; Match:</h3>
+            <p>Place a different spirit in each of the shot glasses and enjoy a different drink with every spin.</p>
+            <h3 id="instructions">Instructions:</h3>
+            <ul><li><strong>Wam:</strong> Fill the shot glasses with your alcohol of choice (of course you can vary this from glass to glass).</li><li><strong>Bam:</strong> Leave the roulette wheel in the box.</li><li><strong>Thank You Ma’am:</strong> Drink the contents of the glasses.</li></ul>
+        ]]>
+    </string>
 
 </resources>

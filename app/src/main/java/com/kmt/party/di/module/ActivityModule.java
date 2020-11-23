@@ -23,6 +23,9 @@ import com.kmt.party.ui.menu.MenuPresenter;
 import com.kmt.party.ui.settings.SettingsMvpPresenter;
 import com.kmt.party.ui.settings.SettingsMvpView;
 import com.kmt.party.ui.settings.SettingsPresenter;
+import com.kmt.party.ui.settings.instruction.GameRuleMvpPresenter;
+import com.kmt.party.ui.settings.instruction.GameRuleMvpView;
+import com.kmt.party.ui.settings.instruction.GameRulePresenter;
 import com.kmt.party.ui.team.TeamAdapter;
 import com.kmt.party.ui.team.TeamMvpPresenter;
 import com.kmt.party.ui.team.TeamMvpView;
@@ -94,6 +97,13 @@ public class ActivityModule {
     @PerActivity
     SettingsMvpPresenter<SettingsMvpView> provideSettingsPresenter(
             SettingsPresenter<SettingsMvpView> presenter) {
+        return presenter;
+    }
+
+    @Provides
+    @PerActivity
+    GameRuleMvpPresenter<GameRuleMvpView> provideGameRulePresenter(
+            GameRulePresenter<GameRuleMvpView> presenter) {
         return presenter;
     }
 

@@ -144,4 +144,84 @@
     <string name="add_players">ajouter des joueurs</string>
     <string name="play">jouer</string>
     <string name="no_players_added_yet">Aucun joueur ajouté pour le moment.</string>
+    <string name="game_rule_title">Instruction</string>
+    <string name="never_have_i_ever_description_title">🔥 Règles du jeu</string>
+
+    <string name="never_have_i_ever_description">
+        <![CDATA[
+            <p>
+                <strong> Jamais je n\'ai jamais </strong>, également connu sous le nom de <strong> Jamais jamais </strong>,
+                <strong> Je n\'ai jamais… </strong> ou <strong> Dix doigts </strong>. C’est l’un des meilleurs
+                jeux de questions pour apprendre à se connaître. Vous trouverez ici tout ce dont vous avez besoin
+                jouez à ce jeu de société emblématique.
+            </p>
+        ]]>
+      </string>
+    <string name="never_have_i_ever_game_rule_title">
+        <![CDATA[
+            😃 Spielregeln
+        ]]>
+    </string>
+    <string name="never_have_i_ever_game_rules"><![CDATA[
+
+            <div class="step">
+                <b class = "whb"> 1) Rassemblez au moins 5 joueurs. </b> Comme il y a de l\'alcool dans cette version du jeu, tous les joueurs doivent avoir l\'âge légal pour boire. Vous pouvez avoir autant de joueurs que vous le souhaitez, mais si vous en avez plus de 10, divisez le grand groupe en plusieurs groupes de moins de joueurs.
+            </div>
+
+            <br>
+
+            <div class="step">
+            <b class = "whb"> 2) Assurez-vous que tout le monde a la même quantité à boire. </b> C\'est à chaque joueur ce qu\'il veut boire. Mais pour rendre le jeu plus équitable, tout le monde devrait avoir à peu près la même quantité dans sa tasse. Vous pouvez jouer avec de la bière, du vin ou des boissons mixtes.
+            <ul> <li> Vous pouvez également jouer à la version à boire du jeu en utilisant des coups d\'alcool. Chaque fois que quelqu\'un a fait ce que dit le joueur, il doit tenter sa chance. Vous devrez remplir les injections au fur et à mesure. </li> </ul>
+            </div>
+
+            <br>
+
+            <div class="step">
+                <b class = "whb"> 3) Demandez au premier joueur d\'annoncer quelque chose qu\'il n\'a jamais fait. </b> Quelqu\'un peut se porter volontaire pour commencer, ou vous pouvez choisir quelqu\'un qui joue de la pierre, du papier, des ciseaux. Dans la version à boire du jeu, les choses que les joueurs disent ont tendance à être un peu plus risquées. Le premier joueur dit "Jamais je n'ai jamais …" et le suit avec quelque chose qu\'il n\'a jamais fait.
+            <ul> <li> Essayez de proposer des choses que vous n\’avez jamais faites, mais que vous savez que les autres joueurs ont déjà faites. Cela garantit que vous n\’avez pas à boire mais qu\’ils le font, et que les joueurs peuvent sortir plus rapidement du jeu. </li> </ul>
+            </div>
+
+            <br>
+
+            <div class="step">
+                <b class = "whb"> 4) Demandez aux joueurs qui ont fait ce que le premier joueur a dit de boire. </b> Si vous avez fait ce que le premier joueur a dit ne pas avoir fait, vous devez prendre un verre votre boisson. Pour que ce soit juste, vous pouvez le chronométrer de sorte que tous les joueurs doivent boire pendant la même durée. Environ 3 secondes suffisent généralement.
+            </div>
+
+            <br>
+
+            <div class="step">
+                <b class = "whb"> 5) Passez au joueur suivant. </b> Le joueur suivant - le joueur immédiatement à gauche du premier joueur - prend son tour. Ils disent quelque chose qu'ils n'ont jamais fait, en utilisant la construction «Je n'ai jamais…». Les joueurs qui ont fait ça boivent, ceux qui n’ont pas bu.
+            </div>
+
+            <br>
+
+            <div class="step">
+                <b class = "whb"> 6) Demandez au premier joueur de boire si personne d'autre ne le fait. </b> Si le joueur ne peut amener personne à boire - c'est-à-dire que le joueur est le seul à avoir fait ce qu'il a dit - le le joueur doit boire.
+            </div>
+
+            <br>
+
+            <div class="step">
+                <b class = "whb"> 7) Répétez jusqu'à ce qu'une seule personne ait de l'alcool dans sa tasse. </b> Le jeu se termine quand il ne reste qu'une seule personne à boire. Cette personne remporte la partie. Vous pouvez répéter le jeu autant de fois que vous le souhaitez.
+            </div>
+    ]]></string>
+    <string name="drinking_description">
+        <![CDATA[
+            <p> La roulette est un jeu qui existe depuis le début du 18e siècle en France. Depuis, la roulette est devenue un jeu populaire dans le monde entier. </p>
+        ]]>
+    </string>
+    <string name="drinking_rules">
+        <![CDATA[
+            <h2 id = "how-do-you-play-drink-roulette"> Comment jouez-vous à la roulette à boire? </h2>
+            <h3 id = "spin-drink"> Spin & amp; Boire: </h3>
+            <p> Chaque joueur tourne à tour de rôle la roue et boit le contenu du verre approprié. Si le contenu du verre a déjà été consommé, ce joueur ne tirera pas ce tour. Continuez jusqu\'à ce que tous les verres à liqueur soient vides. </p>
+            <h3 id = "pick-your -glasses"> Choisissez vos lunettes: </h3>
+            <p> Chaque joueur prend possession d\'un certain nombre de verres - s\'il y a quatre joueurs, alors quatre verres chacun serait un bon nombre. La roue est tournée et le propriétaire du verre concerné descendra alors le contenu du verre. Cette version a l’avantage par rapport à la version 1 que personne ne sera obligé de boire plus de quatre verres et peut-être se ridiculiser complètement. </p>
+            <h3 id = "mix-match"> Mix & amp; Correspondance: </h3>
+            <p> Placez un spiritueux différent dans chacun des verres à liqueur et savourez une boisson différente à chaque tour. </p>
+            <h3 id = "instructions"> Instructions: </h3>
+            <ul><li> <strong> Wam: </strong> Remplissez les verres à liqueur avec l'alcool de votre choix (bien sûr, vous pouvez le faire varier d'un verre à l'autre). </li> <li> <strong> Bam: < / strong> Laissez la roulette dans la boîte. </li> <li> <strong> Merci Madame: </strong> Buvez le contenu des verres. </li> </ul>
+        ]]>
+    </string>
 </resources>

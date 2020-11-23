@@ -2,36 +2,38 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/party_background">
+    android:background="@drawable/bg_gradient">
 
-    <TextView
-        android:id="@+id/textView41"
+    <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginStart="@dimen/activity_horizontal_margin"
-        android:layout_marginEnd="@dimen/activity_horizontal_margin"
-        android:layout_marginBottom="@dimen/activity_horizontal_margin_32dp"
-        android:ellipsize="end"
-        android:fontFamily="@font/helvetica_neue_bold"
-        android:maxLines="2"
-        android:textSize="20sp"
+        android:padding="30dp"
+        android:layout_centerInParent="true"
         android:background="@drawable/button_primary_bg"
-        android:text="@string/app_name"
-        android:textAlignment="center"
-        android:padding="10dp"
-        android:textColor="@color/white" />
+        android:gravity="center"
+        android:orientation="vertical">
 
-    <ProgressBar
-        style="?android:attr/progressBarStyleHorizontal"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/textView41"
-        android:layout_centerHorizontal="true"
-        android:layout_marginStart="56dp"
-        android:layout_marginTop="@dimen/activity_horizontal_margin"
-        android:layout_marginEnd="56dp"
-        android:indeterminate="true" />
+        <TextView
+            android:id="@+id/textView41"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:fontFamily="@font/helvetica_neue_bold"
+            android:maxLines="2"
+            android:padding="@dimen/activity_horizontal_margin"
+            android:text="@string/app_name"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="20sp" />
+
+        <ProgressBar
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="@dimen/activity_horizontal_margin"
+            android:indeterminate="true" />
+    </LinearLayout>
+
 
 </RelativeLayout>

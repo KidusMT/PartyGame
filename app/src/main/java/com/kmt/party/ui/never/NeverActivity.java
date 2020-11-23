@@ -62,7 +62,7 @@ public class NeverActivity extends BaseActivity implements NeverMvpView {
         // open settings screen
         // 1) change language
         // 2) instruction of the game
-        startActivity(SettingsActivity.getStartIntent(NeverActivity.this, NeverActivity.TAG));
+        startActivity(SettingsActivity.getStartIntent(NeverActivity.this, TAG));
         finish();
     }
 

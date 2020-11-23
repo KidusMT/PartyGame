@@ -8,6 +8,7 @@ import com.kmt.party.ui.menu.MenuActivity;
 import com.kmt.party.ui.never.NeverActivity;
 import com.kmt.party.ui.settings.LanguageListActivity;
 import com.kmt.party.ui.settings.SettingsActivity;
+import com.kmt.party.ui.settings.instruction.GameRuleActivity;
 import com.kmt.party.ui.splash.SplashActivity;
 import com.kmt.party.ui.team.TeamActivity;
 import com.kmt.party.ui.team.TeamAdapter;
@@ -33,6 +34,8 @@ public interface ActivityComponent {
     void inject(LanguageListActivity activity);
 
     void inject(TeamActivity activity);
+
+    void inject(GameRuleActivity activity);
 
     void inject(TeamAdapter adapter);
 
