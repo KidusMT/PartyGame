@@ -151,6 +151,9 @@ public class NeverPresenter<V extends NeverMvpView> extends BasePresenter<V> imp
         questions.add(new Question(context.getString(R.string.party_neve_have_i_ever_15)));
         questions.add(new Question(context.getString(R.string.party_neve_have_i_ever_16)));
         questions.add(new Question(context.getString(R.string.party_neve_have_i_ever_17)));
+        questions.add(new Question(context.getString(R.string.party_neve_have_i_ever_18)));
+        questions.add(new Question(context.getString(R.string.party_neve_have_i_ever_19)));
+        questions.add(new Question(context.getString(R.string.party_neve_have_i_ever_20)));
 
         questionList = questions;
     }
