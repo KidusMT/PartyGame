@@ -2,8 +2,8 @@
 
 <p align="center">
     <img src="screenshots/ic_launcher.png" width="150" />
-    <h2 align="center"> Cool Massage App </h2>
-    <p align="center"> <code> This unique vibrator app is a great and powerful relaxing and full body vibrator massager for your relaxation, pleasure and great satisfaction. </code> </p>
+    <h2 align="center"> Party Game </h2>
+    <p align="center"> <code> A drinking game is basically a party game with drinking rules. The rules of the game determine when and how much someone has to drink. When you play in a pub, there are sometimes rules for who has to pay for the drinks. </code> </p>
 </p>
 
 # Screenshots
