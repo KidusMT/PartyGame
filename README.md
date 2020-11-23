@@ -10,43 +10,37 @@
 <p align="center">
 <table border="0">
     <tr>
-        <td><img src="screenshots/home_night_mode.jpg" width="150" /></td>
-        <td><img src="screenshots/light_mode.jpg" width="150" /></td>
-        <td><img src="screenshots/patterns.jpg" width="150" /></td>
-        <td><img src="screenshots/audio_musics.jpg" width="150" /></td>
+        <td><img src="screenshots/two_drinking_games.jpg" width="150" /></td>
+        <td><img src="screenshots/three_categories.jpg" width="150" /></td>
+        <td><img src="screenshots/tinder_swipe_effect.jpg" width="150" /></td>
+        <td><img src="screenshots/multiple_plyer.jpg" width="150" /></td>
+        <td><img src="screenshots/luck_wheel_roulette.jpg" width="150" /></td>
+        <td><img src="screenshots/funny_questions.jpg" width="150" /></td>
+        <td><img src="screenshots/seven_languages.jpg" width="150" /></td>
+        <td><img src="screenshots/instruction.jpg" width="150" /></td>
     </tr>
 </table>
 </p>
 
-## Audio Sounds
+## Two Games [Party Games]
 
-* [X] Bird
-* [X] Night
-* [X] Rain
-* [X] See
-* [X] Wind
+* [X] Drinking Roulette
+* [X] Never have I ever
 
-## Vibration Patterns
+## Supported Languages
 
-* [X] Beat
-* [X] Bliss
-* [X] Blow
-* [X] Cascade
-* [X] Cuddle
-* [X] Eruption
-* [X] Homely
-* [X] Hurricane
-* [X] Moist
-* [X] Motor
-* [X] Pat
-* [X] Rupture
-* [X] Showery
-* [X] Tempest
-* [X] Quiver
+* [X] English
+* [X] Russian
+* [X] Spanish
+* [X] Portuguese
+* [X] German
+* [X] French
+* [X] Japanese
 
 Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon"> www.flaticon.com</a>
 </br>
-Audio sounds by <a href="https://freesound.org" title="Freesound">Freesound</a> from <a href="https://freesound.org/" title="Freesound"> www.freesound.org</a> github <a href="https://github.com/MTG/freesound" title="github"> https://github.com/MTG/freesound</a>
+Lucky Wheel Library from github <a href="https://github.com/mmoamenn/LuckyWheel_Android" title="LuckyWheel_Android">
+Mohamed Mo'men</a> from <a href="https://github.com/mmoamenn" title="mmoamenn"> @mmoamenn</a>
 </br>
 
 
