@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white"
+    android:background="@drawable/bg_gradient"
     android:orientation="vertical"
     tools:context=".ui.settings.SettingsActivity">
 
@@ -16,8 +16,7 @@
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
-            android:layout_height="?actionBarSize"
-            android:background="@color/colorPrimaryDark">
+            android:layout_height="?actionBarSize">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -64,6 +63,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/activity_vertical_margin"
+                android:textColor="@color/white"
                 android:layout_marginBottom="@dimen/horizontal_margin_8"
                 android:text="@string/account_settings"
                 android:textSize="22sp" />
@@ -84,14 +84,15 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:textColor="@color/white"
                     android:text="@string/language" />
 
                 <TextView
                     android:id="@+id/lbl_current_language"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="English"
-                    android:textColor="@color/colorPrimary" />
+                    android:textColor="@color/white"
+                    android:text="English" />
 
 
             </LinearLayout>
@@ -101,6 +102,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/activity_vertical_margin"
+                android:textColor="@color/white"
                 android:layout_marginBottom="@dimen/horizontal_margin_8"
                 android:text="@string/instruction"
                 android:textSize="22sp" />
@@ -120,6 +122,7 @@
 
                 <TextView
                     android:layout_width="wrap_content"
+                    android:textColor="@color/white"
                     android:layout_height="wrap_content"
                     android:text="@string/never_have_i_ever_menu" />
 
@@ -127,7 +130,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/how_to_play_the_game"
-                    android:textColor="@color/colorPrimary" />
+                    android:textColor="@color/white" />
 
             </LinearLayout>
 
@@ -147,13 +150,14 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:textColor="@color/white"
                     android:text="@string/drinking_roulette" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/how_to_play_the_game"
-                    android:textColor="@color/colorPrimary" />
+                    android:textColor="@color/white" />
 
 
             </LinearLayout>
