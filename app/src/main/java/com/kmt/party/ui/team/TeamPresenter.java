@@ -1,6 +1,7 @@
 package com.kmt.party.ui.team;
 
 import com.kmt.party.data.DataManager;
+import com.kmt.party.data.model.Player;
 import com.kmt.party.data.model.Question;
 import com.kmt.party.ui.base.BasePresenter;
 import com.kmt.party.utils.rx.SchedulerProvider;
@@ -23,5 +24,15 @@ public class TeamPresenter<V extends TeamMvpView> extends BasePresenter<V> imple
                          SchedulerProvider schedulerProvider,
                          CompositeDisposable compositeDisposable) {
         super(dataManager, schedulerProvider, compositeDisposable);
+    }
+
+    @Override
+    public void populatePlayers() {
+        List<Player> playerList = getDataManager().getPlayerList();
+        if (playerList!=null && playerList.size()>0){
+            getMvpView().showPlayers(new ArrayList<>(playerList));
+        }else{
+            getMvpView().showPlayers(new ArrayList<>());
+        }
     }
 }

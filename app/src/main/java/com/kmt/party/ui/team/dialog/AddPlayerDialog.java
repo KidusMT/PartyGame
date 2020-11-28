@@ -88,6 +88,7 @@ public class AddPlayerDialog extends BaseDialog implements AddPlayerMvpView {
         }
         Player player = new Player();
         player.setName(name);
+        mPresenter.saveTeamPlayers(player);
         communicator.onAddClick(player);
         dismissDialog();
     }

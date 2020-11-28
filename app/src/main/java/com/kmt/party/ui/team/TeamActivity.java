@@ -18,6 +18,7 @@ import com.kmt.party.ui.never.NeverActivity;
 import com.kmt.party.ui.team.dialog.AddPlayerDialog;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import javax.inject.Inject;
 
@@ -83,8 +84,10 @@ public class TeamActivity extends BaseActivity implements TeamMvpView, TeamCommu
     protected void setUp() {
         setupTasksRecyclerView();
         showPlayers(playerArrayList);
+        mPresenter.populatePlayers();
     }
 
+    @Override
     public void showPlayers(ArrayList<Player> players){
         if (players!=null & players.size()>0){
             mRecyclerView.setVisibility(View.VISIBLE);

@@ -2,8 +2,11 @@ package com.kmt.party.data;
 
 import android.content.Context;
 
+import com.kmt.party.data.model.Player;
 import com.kmt.party.data.prefs.PreferencesHelper;
 import com.kmt.party.di.ApplicationContext;
+
+import java.util.List;
 
 import javax.inject.Inject;
 import javax.inject.Singleton;
@@ -32,5 +35,15 @@ public class AppDataManager implements DataManager {
     @Override
     public void setCurrentLanguage(String language) {
         mPreferencesHelper.setCurrentLanguage(language);
+    }
+
+    @Override
+    public void setPlayerList(List<Player> list) {
+        mPreferencesHelper.setPlayerList(list);
+    }
+
+    @Override
+    public List<Player> getPlayerList() {
+        return mPreferencesHelper.getPlayerList();
     }
 }
