@@ -90,10 +90,12 @@ public class TeamActivity extends BaseActivity implements TeamMvpView, TeamCommu
     @Override
     public void showPlayers(ArrayList<Player> players){
         if (players!=null & players.size()>0){
+            playerArrayList = players;
             mRecyclerView.setVisibility(View.VISIBLE);
             mNoAssignedTask.setVisibility(View.GONE);
             mAdapter.addItems(players);
         }else{
+            playerArrayList = new ArrayList<>();
             mNoAssignedTask.setVisibility(View.VISIBLE);
             mRecyclerView.setVisibility(View.GONE);
         }
@@ -136,6 +138,8 @@ public class TeamActivity extends BaseActivity implements TeamMvpView, TeamCommu
     public void onItemClearClicked(Player crew) {
         mAdapter.removeItem(crew);
         playerArrayList.remove(crew);
-        showPlayers(playerArrayList);
+//        showPlayers(playerArrayList);
+        mPresenter.deletePlayer(crew);
+        mPresenter.populatePlayers();
     }
 }

@@ -29,10 +29,26 @@ public class TeamPresenter<V extends TeamMvpView> extends BasePresenter<V> imple
     @Override
     public void populatePlayers() {
         List<Player> playerList = getDataManager().getPlayerList();
-        if (playerList!=null && playerList.size()>0){
+        if (playerList != null && playerList.size() > 0) {
             getMvpView().showPlayers(new ArrayList<>(playerList));
-        }else{
+        } else {
             getMvpView().showPlayers(new ArrayList<>());
         }
+    }
+
+    @Override
+    public void deletePlayer(Player player) {
+        List<Player> players = getDataManager().getPlayerList();
+        if (players != null) {
+            for (int i = 0; i < players.size(); i++) {
+                if (players.get(i).getName().equals(player.getName())){
+                    players.remove(i);
+                    break;
+                }
+            }
+        }else{
+            players = new ArrayList<>();
+        }
+        getDataManager().setPlayerList(players);
     }
 }

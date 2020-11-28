@@ -10,4 +10,5 @@ import java.util.ArrayList;
 @PerActivity
 public interface TeamMvpPresenter<V extends TeamMvpView> extends MvpPresenter<V> {
     void populatePlayers();
+    void deletePlayer(Player player);
 }
