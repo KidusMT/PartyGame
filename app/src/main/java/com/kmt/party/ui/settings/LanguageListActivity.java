@@ -145,7 +145,6 @@ public class LanguageListActivity extends BaseActivity implements View.OnClickLi
                     e.printStackTrace();
                 }
                 onConfigurationChanged(config);
-//                reload();
                 onBackPressed();
 
                 break;
@@ -170,7 +169,6 @@ public class LanguageListActivity extends BaseActivity implements View.OnClickLi
                     e.printStackTrace();
                 }
                 onConfigurationChanged(configRu);
-//                reload();
                 onBackPressed();
 
                 break;
@@ -195,7 +193,6 @@ public class LanguageListActivity extends BaseActivity implements View.OnClickLi
                     e.printStackTrace();
                 }
                 onConfigurationChanged(configEs);
-//                reload();
                 onBackPressed();
 
                 break;
@@ -220,7 +217,6 @@ public class LanguageListActivity extends BaseActivity implements View.OnClickLi
                     e.printStackTrace();
                 }
                 onConfigurationChanged(configPt);
-//                reload();
                 onBackPressed();
 
                 break;
@@ -245,7 +241,6 @@ public class LanguageListActivity extends BaseActivity implements View.OnClickLi
                     e.printStackTrace();
                 }
                 onConfigurationChanged(configDe);
-//                reload();
                 onBackPressed();
 
                 break;
@@ -270,7 +265,6 @@ public class LanguageListActivity extends BaseActivity implements View.OnClickLi
                     e.printStackTrace();
                 }
                 onConfigurationChanged(configFr);
-//                reload();
                 onBackPressed();
 
                 break;
@@ -295,23 +289,12 @@ public class LanguageListActivity extends BaseActivity implements View.OnClickLi
                     e.printStackTrace();
                 }
                 onConfigurationChanged(configJa);
-//                reload();
                 onBackPressed();
 
                 break;
 
 
         }
-    }
-
-    public void reload() {
-        Intent intent = getIntent();
-        overridePendingTransition(0, 0);
-        intent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
-        finish();
-
-        overridePendingTransition(0, 0);
-        startActivity(intent);
     }
 
     @Override
@@ -328,7 +311,10 @@ public class LanguageListActivity extends BaseActivity implements View.OnClickLi
 
     @Override
     public void onBackPressed() {
-        startActivity(SettingsActivity.getStartIntent(LanguageListActivity.this, fromScreen));
+        Intent intent = SettingsActivity.getStartIntent(LanguageListActivity.this, fromScreen);
+        overridePendingTransition(0, 0);
+        intent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
+        startActivity(intent);
         finish();
     }
 
