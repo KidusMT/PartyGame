@@ -61,6 +61,7 @@
                             android:gravity="center|start|bottom"
                             android:hint="@string/dialog_hint_enter_player_name"
                             android:padding="@dimen/vertical_margin_12"
+                            android:textColorHint="@color/mater_grey_700"
                             android:inputType="textVisiblePassword|textNoSuggestions"
                             android:maxLength="40"
                             android:textColor="@color/black_effective"
