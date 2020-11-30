@@ -54,9 +54,15 @@ public class SettingsActivity extends BaseActivity implements SettingsMvpView {
         super.onDestroy();
     }
 
-    @OnClick({R.id.btn_settings_drinking_instruction, R.id.btn_settings_never_instruction})
-    void onInstructionClicked(){
-        startActivity(GameRuleActivity.getStartIntent(SettingsActivity.this, fromScreen));
+    @OnClick(R.id.btn_settings_drinking_instruction)
+    void onDrinkingInstructionClicked(){
+        startActivity(GameRuleActivity.getStartIntent(SettingsActivity.this, DrinkingRouletteActivity.TAG));
+        finish();
+    }
+
+    @OnClick(R.id.btn_settings_never_instruction)
+    void onNeverInstructionClicked(){
+        startActivity(GameRuleActivity.getStartIntent(SettingsActivity.this, NeverActivity.TAG));
         finish();
     }
 
