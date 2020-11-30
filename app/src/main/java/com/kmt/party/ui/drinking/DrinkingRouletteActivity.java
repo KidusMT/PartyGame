@@ -16,7 +16,6 @@ import com.kmt.party.data.model.Player;
 import com.kmt.party.data.model.Question;
 import com.kmt.party.ui.base.BaseActivity;
 import com.kmt.party.ui.drinking.dialog.DrinkingQuestionsDialog;
-import com.kmt.party.ui.never.NeverActivity;
 import com.kmt.party.ui.settings.SettingsActivity;
 import com.kmt.party.ui.team.TeamActivity;
 import com.kmt.party.ui.team.dialog.AddPlayerDialog;
@@ -41,6 +40,7 @@ public class DrinkingRouletteActivity extends BaseActivity implements DrinkingRo
     DrinkingRouletteMvpPresenter<DrinkingRouletteMvpView> mPresenter;
     @BindView(R.id.lwv)
     LuckyWheel luckyWheel;
+    DrinkingQuestionsDialog dialog;
 
     public static Intent getStartIntent(Context context, ArrayList<Player> list) {
         players = list;
@@ -69,8 +69,18 @@ public class DrinkingRouletteActivity extends BaseActivity implements DrinkingRo
 
     @Override
     protected void onDestroy() {
+        if (dialog != null) {
+            dialog.dismissAllowingStateLoss();
+        }
+        luckyWheel.setLuckyWheelReachTheTarget(null);
+        luckyWheel = null;
         mPresenter.onDetach();
         super.onDestroy();
+    }
+
+    @OnClick(R.id.btn_back)
+    public void OnClickBack(View view) {
+        onBackPressed();
     }
 
     @OnClick(R.id.btn_instruction)
@@ -79,11 +89,7 @@ public class DrinkingRouletteActivity extends BaseActivity implements DrinkingRo
         // 1) change language
         // 2) instruction of the game
         startActivity(SettingsActivity.getStartIntent(DrinkingRouletteActivity.this, TAG));
-    }
-
-    @OnClick(R.id.btn_back)
-    public void OnClickBack(View view) {
-        onBackPressed();
+        finish();
     }
 
     @Override
@@ -106,13 +112,19 @@ public class DrinkingRouletteActivity extends BaseActivity implements DrinkingRo
             selectedQuestion = questionArrayList.get(i);
         }
 
-        if (players.size()>0){
+        if (players.size() > 0) {
             luckyWheel.addWheelItems(wheelItems);
             Random rand = new Random();
             final int[] targ = {randNum[rand.nextInt(1000) % (players.size() - 1)]};
             luckyWheel.setTarget(targ[0]);
             luckyWheel.setLuckyWheelReachTheTarget(() -> {
-                DrinkingQuestionsDialog.newInstance(questionArrayList.get(currentQuestion[0]), players.get(targ[0] - 1)).show(getSupportFragmentManager(), AddPlayerDialog.TAG);
+                dialog = DrinkingQuestionsDialog.newInstance(questionArrayList.get(currentQuestion[0]),
+                        players.get(targ[0] - 1));
+                dialog.show(getSupportFragmentManager(),
+                        AddPlayerDialog.TAG);
+                DrinkingQuestionsDialog.newInstance(questionArrayList.get(currentQuestion[0]),
+                        players.get(targ[0] - 1)).show(getSupportFragmentManager(),
+                        AddPlayerDialog.TAG);
                 targ[0] = randNum[rand.nextInt(1000) % (players.size() - 1)];
                 luckyWheel.setTarget(targ[0]);
                 currentQuestion[0]++;

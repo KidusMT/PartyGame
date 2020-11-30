@@ -15,6 +15,7 @@ import com.kmt.party.ui.base.BaseActivity;
 import com.kmt.party.ui.drinking.DrinkingRouletteActivity;
 import com.kmt.party.ui.menu.MenuActivity;
 import com.kmt.party.ui.never.NeverActivity;
+import com.kmt.party.ui.settings.SettingsActivity;
 import com.kmt.party.ui.team.dialog.AddPlayerDialog;
 
 import java.util.ArrayList;

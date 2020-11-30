@@ -103,14 +103,6 @@ dependencies {
     androidTestImplementation "org.mockito:mockito-core:$rootProject.mockitoVersion"
     androidTestAnnotationProcessor "com.google.dagger:dagger-compiler:$rootProject.dagger2Version"
 
-    // Retrofit and Picasso
-    implementation "com.squareup.retrofit2:retrofit:$rootProject.retrofitVersion"
-    implementation "com.squareup.retrofit2:converter-gson:$rootProject.retrofitVersion"
-    implementation "com.squareup.retrofit2:converter-scalars:$rootProject.retrofitVersion"
-    implementation "com.squareup.picasso:picasso:$rootProject.picassoVersion"
-    implementation "com.squareup.okhttp3:logging-interceptor:$rootProject.retrofitInterceptorVersion"
-    implementation "com.jakewharton.retrofit:retrofit2-rxjava2-adapter:$rootProject.rxJakeVersion"
-
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
 
 }
